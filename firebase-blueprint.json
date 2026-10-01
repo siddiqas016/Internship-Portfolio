@@ -1,0 +1,118 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Base user account profile and assigned system role",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 160 },
+        "role": { "type": "string", "enum": ["student", "company", "admin"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "email", "role"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student candidate profile with academic details, skills, and resume",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 120 },
+        "email": { "type": "string", "maxLength": 160 },
+        "branch": { "type": "string", "maxLength": 120 },
+        "skills": { "type": "array" },
+        "resumeUrl": { "type": "string", "maxLength": 2048 },
+        "resumeName": { "type": "string", "maxLength": 256 },
+        "profileCompletePct": { "type": "number" },
+        "demo": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "Company": {
+      "title": "Company",
+      "description": "Recruiting employer account and verification review status",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "companyName": { "type": "string", "maxLength": 160 },
+        "email": { "type": "string", "maxLength": 160 },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "demo": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "reviewedAt": { "type": "string" },
+        "reviewedBy": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["userId", "companyName", "status"]
+    },
+    "Opportunity": {
+      "title": "Opportunity",
+      "description": "Placement or internship listing published by verified employers",
+      "type": "object",
+      "properties": {
+        "companyId": { "type": "string", "maxLength": 128 },
+        "companyName": { "type": "string", "maxLength": 160 },
+        "title": { "type": "string", "maxLength": 160 },
+        "type": { "type": "string", "enum": ["Internship", "Full-time"] },
+        "location": { "type": "string", "maxLength": 100 },
+        "paid": { "type": "string", "enum": ["Paid", "Unpaid"] },
+        "stipend": { "type": "string", "maxLength": 100 },
+        "skills": { "type": "array" },
+        "closes": { "type": "string", "maxLength": 60 },
+        "applicantCount": { "type": "number" },
+        "demo": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["companyId", "companyName", "title", "type", "location", "paid"]
+    },
+    "Application": {
+      "title": "Application",
+      "description": "Student job submission tracked through hiring stages",
+      "type": "object",
+      "properties": {
+        "opportunityId": { "type": "string", "maxLength": 128 },
+        "opportunityTitle": { "type": "string", "maxLength": 160 },
+        "companyId": { "type": "string", "maxLength": 128 },
+        "companyName": { "type": "string", "maxLength": 160 },
+        "studentId": { "type": "string", "maxLength": 128 },
+        "studentName": { "type": "string", "maxLength": 120 },
+        "studentEmail": { "type": "string", "maxLength": 160 },
+        "studentBranch": { "type": "string", "maxLength": 120 },
+        "studentSkills": { "type": "array" },
+        "resumeUrl": { "type": "string", "maxLength": 2048 },
+        "resumeName": { "type": "string", "maxLength": 256 },
+        "stage": { "type": "number" },
+        "status": { "type": "string", "enum": ["Applied", "Shortlisted", "Interview", "Offer", "Decision"] },
+        "dates": { "type": "array" },
+        "nextStep": { "type": "string", "maxLength": 500 },
+        "appliedAt": { "type": "string" },
+        "demo": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["opportunityId", "companyId", "studentId", "status", "stage"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User account role record"
+    },
+    "/students/{userId}": {
+      "schema": "Student",
+      "description": "Student profile, verified skills, and resume metadata"
+    },
+    "/companies/{companyId}": {
+      "schema": "Company",
+      "description": "Employer details and placement officer review status"
+    },
+    "/opportunities/{opportunityId}": {
+      "schema": "Opportunity",
+      "description": "Internship and job postings"
+    },
+    "/applications/{applicationId}": {
+      "schema": "Application",
+      "description": "Hiring pipeline application tracker document"
+    }
+  }
+}

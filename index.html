@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Platform: internships and placements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#4A3F36;--mute:#85766A;--g:rgba(255,255,255,.42);--g2:rgba(255,255,255,.3);--gb:rgba(255,255,255,.7);--btn:#6F5E50;--btnink:#F7F0E6;--acc:#6F5E50;--now:#C98B3A;--sh:rgba(90,70,50,.18);
+--bg1:#A99886;--bg2:#E8DCCD;--bg3:#F6EFE5;--glow:rgba(255,255,255,.85);--r1:#9C8672;--r2:#85705E;--ring:rgba(111,94,80,.18);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#F1ECE3;--mute:rgba(241,236,227,.64);--g:rgba(255,255,255,.1);--g2:rgba(255,255,255,.07);--gb:rgba(255,255,255,.28);--btn:#F1ECE3;--btnink:#21332A;--acc:#CDE3C6;--now:#F0CF86;--sh:rgba(0,0,0,.35);--bg1:#16231C;--bg2:#2F4A3C;--bg3:#5F8070;--glow:rgba(210,235,205,.5);--r1:#0F1A15;--r2:#1B2C23;--ring:rgba(255,255,255,.16)}}
+:root[data-theme="dark"]{--ink:#F1ECE3;--mute:rgba(241,236,227,.64);--g:rgba(255,255,255,.1);--g2:rgba(255,255,255,.07);--gb:rgba(255,255,255,.28);--btn:#F1ECE3;--btnink:#21332A;--acc:#CDE3C6;--now:#F0CF86;--sh:rgba(0,0,0,.35);--bg1:#16231C;--bg2:#2F4A3C;--bg3:#5F8070;--glow:rgba(210,235,205,.5);--r1:#0F1A15;--r2:#1B2C23;--ring:rgba(255,255,255,.16)}
+:root[data-theme="light"]{--ink:#4A3F36;--mute:#85766A;--g:rgba(255,255,255,.42);--g2:rgba(255,255,255,.3);--gb:rgba(255,255,255,.7);--btn:#6F5E50;--btnink:#F7F0E6;--acc:#6F5E50;--now:#C98B3A;--sh:rgba(90,70,50,.18);--bg1:#A99886;--bg2:#E8DCCD;--bg3:#F6EFE5;--glow:rgba(255,255,255,.85);--r1:#9C8672;--r2:#85705E;--ring:rgba(111,94,80,.18)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;color:var(--ink);font:300 15px/1.6 Outfit,system-ui,sans-serif;background:linear-gradient(180deg,var(--bg1),var(--bg2) 55%,var(--bg3));background-attachment:fixed;transition:color .3s,background .3s}
+#bd{position:fixed;inset:0;z-index:0;pointer-events:none}#bd svg{width:100%;height:100%}
+h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:22px;font-weight:400}h3{font-size:16px;font-weight:500;letter-spacing:-.01em}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.glass{background:var(--g);border:1px solid var(--gb);border-radius:24px;backdrop-filter:blur(26px) saturate(1.3);-webkit-backdrop-filter:blur(26px) saturate(1.3);box-shadow:0 20px 50px var(--sh),inset 0 1px 0 rgba(255,255,255,.28)}
+.nav{position:sticky;top:14px;z-index:6;max-width:1180px;margin:14px auto 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 10px 8px 20px;border-radius:99px}
+.brand{font-weight:500;font-size:20px;display:flex;align-items:center;gap:10px;user-select:none}
+.brand i{width:26px;height:26px;border-radius:8px;background:var(--btn);display:grid;place-items:center}
+.brand i:after{content:"";width:12px;height:2px;background:var(--btnink);border-radius:2px;box-shadow:0 -5px 0 var(--btnink),0 5px 0 var(--btnink)}
+.links{display:flex;gap:2px;flex-wrap:wrap}
+.links button{border:0;background:none;padding:9px 16px;border-radius:99px;color:var(--mute);font-weight:400;transition:background .2s,color .2s}
+.links button[aria-selected=true]{background:var(--g);color:var(--ink);box-shadow:inset 0 0 0 1px var(--gb)}
+.pill{border:1px solid var(--gb);background:var(--g2);padding:8px 16px;border-radius:99px;font-weight:400;transition:background .2s}
+.pill:hover{background:var(--g)}
+.btn{border:0;background:var(--btn);color:var(--btnink);padding:12px 26px;border-radius:99px;font-weight:500;transition:opacity .2s,transform .1s}
+.btn:active{transform:scale(.98)}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--ink)}
+.btn.sm{padding:8px 18px;font-size:14px}
+.btn[disabled]{opacity:.55;cursor:default;transform:none}
+main{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:30px clamp(14px,3vw,24px) 70px}
+.view{display:none}.view.on{display:block;animation:fadeIn .25s ease-out}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.mute{color:var(--mute)}.s{font-size:13px}
+input,select,textarea{width:100%;padding:12px 18px;border-radius:99px;border:1px solid var(--gb);background:var(--g2);outline:0;color:inherit}
+textarea{border-radius:18px;resize:vertical}
+input::placeholder,textarea::placeholder{color:var(--mute)}
+label{display:block;font-size:13px;color:var(--mute);margin:14px 0 6px 8px}
+
+/* landing */
+.hero{text-align:center;padding:clamp(40px,9vw,110px) 0 46px}
+.hero h1{font-size:clamp(46px,9.5vw,128px);font-weight:200;letter-spacing:-.045em;line-height:.98}
+.hero p{max-width:34em;margin:24px auto 34px;font-size:clamp(16px,1.6vw,19px)}
+.hero .r{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.sec{margin-top:70px}
+.sec>h2{font-size:clamp(26px,3.4vw,40px);font-weight:200;margin-bottom:26px}
+.c3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.c3{grid-template-columns:1fr}}
+.fc{padding:28px}.fc p{margin:10px 0 0;color:var(--mute)}
+.ico{width:46px;height:46px;border-radius:50%;background:var(--btn);color:var(--btnink);display:grid;place-items:center;margin-bottom:22px;font-weight:500}
+.cos{display:flex;gap:14px;flex-wrap:wrap}
+.co{display:flex;align-items:center;gap:12px;padding:12px 22px 12px 12px;border-radius:99px;border:0;text-align:left;background:var(--g);cursor:pointer;transition:transform .2s}
+.co:hover{transform:translateY(-2px)}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:500;color:#2B2620;flex:none;font-size:15px}
+.av.l{width:64px;height:64px;font-size:22px}
+.foot{margin-top:80px;padding:26px 30px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+/* jobs */
+.ph{margin-bottom:22px}.ph h1{font-size:clamp(34px,5vw,60px);font-weight:200}.ph p{margin:10px 0 0;color:var(--mute)}
+.dash{display:grid;grid-template-columns:330px 1fr 300px;gap:16px;align-items:start}
+@media(max-width:1060px){.dash{grid-template-columns:1fr 1fr}.dash .mid{grid-column:1/-1;order:-1}}
+@media(max-width:660px){.dash{grid-template-columns:1fr}}
+.p{padding:22px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 8px}
+.chips button{border:1px solid var(--gb);background:none;padding:4px 12px;border-radius:99px;font-size:13px;color:inherit;transition:all .2s}
+.chips button[aria-pressed=true]{background:var(--btn);color:var(--btnink);border-color:var(--btn)}
+.list{max-height:520px;overflow:auto;margin:0 -10px;padding:0 10px;scrollbar-width:thin}
+.it{display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:12px;border-radius:18px;cursor:pointer;transition:background .2s}
+.it[aria-pressed=true]{background:var(--g);box-shadow:inset 0 0 0 1px var(--gb)}
+.it small{display:block;color:var(--mute)}
+.tag{display:inline-block;padding:4px 14px;border-radius:99px;background:var(--g2);border:1px solid var(--gb);font-size:13px;margin:0 6px 6px 0}
+.tag.y:before{content:"";display:inline-block;width:5px;height:9px;border:solid var(--acc);border-width:0 2px 2px 0;transform:rotate(45deg);margin:0 8px 2px 0}
+.dt h1{font-size:clamp(32px,4.4vw,54px);font-weight:200;margin:18px 0 6px}
+.dt .meta{color:var(--mute)}
+.dt hr{border:0;border-top:1px solid var(--gb);margin:24px 0}
+.dt p.d{max-width:42em;margin:0 0 24px}
+.stack{display:grid;gap:16px}
+.app{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;border:0;border-top:1px solid var(--gb);background:none;padding:12px 0;text-align:left;cursor:pointer}
+.app:first-of-type{border:0}
+.chip{font-size:12px;padding:3px 12px;border-radius:99px;border:1px solid var(--gb);white-space:nowrap}
+.chip.n{color:var(--now);border-color:var(--now)}
+.chip.high{background:rgba(111,94,80,.18);border-color:var(--btn);color:var(--ink);font-weight:500}
+
+/* tracker */
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.pills button{border:1px solid var(--gb);background:none;padding:7px 18px;border-radius:99px;font-size:14px;color:inherit;transition:background .2s}
+.pills button[aria-pressed=true]{background:var(--g);box-shadow:inset 0 0 0 1px var(--ink)}
+.role{font-size:clamp(32px,5vw,56px);font-weight:200;letter-spacing:-.03em;margin-top:22px}
+.line{position:relative;display:grid;grid-template-columns:repeat(5,1fr);margin:46px 0 10px}
+.line:before{content:"";position:absolute;left:10%;right:10%;top:15px;height:2px;background:var(--gb)}
+.fill{position:absolute;left:10%;top:15px;height:2px;width:0;background:var(--acc);box-shadow:0 0 14px var(--acc);transition:width 1.4s cubic-bezier(.3,.7,.2,1)}
+.st{text-align:center;font-size:13px;position:relative}
+.st i{display:block;margin:0 auto 12px;width:32px;height:32px;border-radius:50%;border:1px solid var(--gb);background:var(--g2);transition:all .3s}
+.st.done i{background:var(--acc);border-color:var(--acc)}
+.st.now i{background:var(--now);border-color:var(--now);box-shadow:0 0 0 7px color-mix(in srgb,var(--now) 25%,transparent),0 0 24px var(--now)}
+.st b{display:block;font-weight:500}.st span{color:var(--mute)}
+.note{padding:18px 22px;border-radius:20px;background:var(--g2);margin-top:26px}
+
+/* company/admin */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.pipe{grid-template-columns:1fr 1fr}}@media(max-width:560px){.pipe{grid-template-columns:1fr}}
+.cand{display:flex;gap:12px;align-items:center;margin-top:12px;padding:12px;border-radius:18px;background:var(--g2);border:1px solid var(--gb);font-size:14px}
+.cand small{display:block;color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.row{display:flex;gap:14px;align-items:center}
+.li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--gb)}.li:first-of-type{border:0}
+.seg{display:flex;gap:6px;margin:16px 0 4px}.seg button{flex:1;border:1px solid var(--gb);background:none;padding:9px;border-radius:99px;font-size:14px;color:inherit;transition:all .2s}
+.seg button[aria-pressed=true]{background:var(--btn);color:var(--btnink);border-color:var(--btn)}
+.auth{max-width:940px;margin:20px auto 0;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;min-height:480px}
+.auth .l{padding:42px;background:var(--g2);display:flex;flex-direction:column;justify-content:flex-end}.auth .r{padding:42px}
+@media(max-width:700px){.auth{grid-template-columns:1fr}}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,90px);padding:12px 22px;border-radius:99px;z-index:99;transition:transform .3s;pointer-events:none}
+.toast.on{transform:translate(-50%,0)}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-backdrop.on{display:flex}
+.modal-card{max-width:640px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+
+/* Career Bot */
+.bot-fab{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:999;display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;background:var(--btn);color:var(--btnink);box-shadow:0 10px 30px var(--sh);border:1px solid var(--gb);cursor:pointer;font-weight:500;transition:transform .2s}
+.bot-fab:hover{transform:translateY(-2px)}
+.bot-window{position:fixed;right:22px;bottom:calc(76px + env(safe-area-inset-bottom,0px));width:360px;max-width:calc(100vw - 32px);height:500px;max-height:calc(100vh - 120px);z-index:1000;display:none;flex-direction:column;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px var(--sh);background:var(--bg2)}
+.bot-window.on{display:flex}
+.bot-header{padding:14px 18px;background:var(--g);border-bottom:1px solid var(--gb);display:flex;justify-content:space-between;align-items:center}
+.bot-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin}
+.bot-msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:13.5px;line-height:1.45}
+.bot-msg.ai{align-self:flex-start;background:var(--g2);border:1px solid var(--gb);color:var(--ink);border-bottom-left-radius:4px}
+.bot-msg.user{align-self:flex-end;background:var(--btn);color:var(--btnink);border-bottom-right-radius:4px}
+.bot-footer{padding:10px 14px;background:var(--g);border-top:1px solid var(--gb);display:flex;gap:8px}
+.bot-chips{display:flex;gap:6px;overflow-x:auto;padding:6px 14px;background:var(--g2);border-top:1px solid var(--gb);scrollbar-width:none}
+.bot-chips button{white-space:nowrap;font-size:11.5px;padding:4px 10px;border-radius:99px;border:1px solid var(--gb);background:var(--g);color:var(--ink)}
+
+/* Aptitude & Coding */
+.code-area{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;background:rgba(0,0,0,.25);color:var(--ink);padding:14px;border-radius:14px;border:1px solid var(--gb);width:100%;min-height:180px;line-height:1.5}
+.quiz-opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:var(--g2);border:1px solid var(--gb);cursor:pointer;margin-bottom:8px;font-size:14px;transition:background .2s}
+.quiz-opt:hover{background:var(--g)}
+.quiz-opt.correct{background:rgba(76,175,80,.25);border-color:#4CAF50}
+.quiz-opt.wrong{background:rgba(244,67,54,.25);border-color:#F44336}
+
+/* SMS Alert Notification */
+.sms-banner{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:16px;background:color-mix(in srgb, var(--now) 15%, transparent);border:1px solid var(--now);color:var(--ink);margin-bottom:16px}
+.sms-badge{padding:3px 8px;border-radius:6px;background:var(--now);color:#fff;font-size:11px;font-weight:600;letter-spacing:.03em}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bd" aria-hidden="true"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+ <defs><radialGradient id="rg" cx=".25" cy=".1" r=".7"><stop offset="0" stop-color="var(--glow)" stop-opacity=".55"/><stop offset="1" stop-color="var(--glow)" stop-opacity="0"/></radialGradient><filter id="bl"><feGaussianBlur stdDeviation="9"/></filter><filter id="b2"><feGaussianBlur stdDeviation="3"/></filter></defs>
+ <rect width="1440" height="900" fill="url(#rg)"/>
+ <path d="M-40 640 C240 540 420 520 640 590 S1080 700 1480 430 L1480 900 L-40 900Z" fill="var(--r1)" opacity=".38" filter="url(#bl)"/>
+ <path d="M-40 760 C300 650 560 760 820 720 S1240 600 1480 660 L1480 900 L-40 900Z" fill="var(--r2)" opacity=".55" filter="url(#b2)"/>
+ <path d="M-20 560 C300 640 560 840 860 760 S1260 500 1470 330" fill="none" stroke="#fff" stroke-width="3" opacity=".75" filter="url(#b2)"/>
+ <path d="M-20 560 C300 640 560 840 860 760 S1260 500 1470 330" fill="none" stroke="#fff" stroke-width="11" opacity=".25" filter="url(#bl)"/>
+</svg></div>
+
+<header class="nav glass">
+  <div class="brand" data-go="home" style="cursor:pointer"><i></i><span id="brand-title">Platform</span></div>
+  <nav class="links" role="tablist" id="tabs">
+    <!-- Injected dynamically based on role -->
+  </nav>
+  <div class="row" style="gap:8px" id="nav-actions">
+    <button class="pill" id="mode-toggle-btn">Employer Suite</button>
+    <button class="pill" id="th">Forest</button>
+    <button class="btn sm" id="auth-btn" data-go="auth">Sign in</button>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="view on" id="home">
+  <div class="hero">
+    <h1>Start your journey</h1>
+    <p class="mute">Internships and placements from your college, in one place. Build a profile once, apply to verified companies, and follow every application until the offer.</p>
+    <div class="r"><button class="btn" data-go="auth">Get started</button><button class="btn o" data-go="jobs">Browse opportunities</button></div>
+  </div>
+  <div class="c3">
+    <div class="glass fc">
+      <div class="ico">1</div>
+      <h3>Build your profile</h3>
+      <p>Upload your resume to extract skills automatically with the built-in ATS analyzer.</p>
+      <div style="margin-top:14px"><button class="btn sm o" id="btn-home-analyzer">Analyze resume</button></div>
+    </div>
+    <div class="glass fc"><div class="ico">2</div><h3>Apply in one tap</h3><p>See live skill-fit match scores, then apply directly to verified college postings.</p></div>
+    <div class="glass fc"><div class="ico">3</div><h3>Know where you stand</h3><p>Follow every stage from Applied to Offer with real-time status and date updates.</p></div>
+  </div>
+  <div class="sec"><h2>Hiring from your college now</h2><div class="cos" id="cos"></div></div>
+  <div class="sec"><h2>For companies and the placement cell</h2>
+    <div class="c3" style="grid-template-columns:1fr 1fr">
+      <div class="glass fc"><h3>Find the right students</h3><p>Post a role, see applicants with their skills and resumes, and move them through shortlist, interview and offer.</p><div style="margin-top:20px"><button class="btn o sm" data-go="company">Open company view</button></div></div>
+      <div class="glass fc"><h3>Keep placements organised</h3><p>Approve companies, watch applications move, and help students who need a nudge, all in one place.</p><div style="margin-top:20px"><button class="btn o sm" data-go="admin">Open placement cell</button></div></div>
+    </div>
+  </div>
+  <div class="glass foot"><div class="brand"><i></i>Platform</div><span class="mute s">Internship and placement portal. Built for campus recruitment.</span></div>
+</section>
+
+<!-- JOBS -->
+<section class="view" id="jobs">
+  <div class="ph"><h1>Opportunities</h1><p>Roles from verified companies, sorted by how well they fit your skills.</p></div>
+  <div class="dash">
+    <div class="glass p">
+      <input id="q" type="search" placeholder="Search role, company or skill" aria-label="Search opportunities">
+      <div class="chips" id="fl"><button aria-pressed="false" data-k="Internship">Internship</button><button aria-pressed="false" data-k="Full-time">Full-time</button><button aria-pressed="false" data-k="Mumbai">Mumbai</button><button aria-pressed="false" data-k="Remote">Remote</button><button aria-pressed="false" data-k="Paid">Paid</button></div>
+      <div class="list" id="list"></div>
+    </div>
+    <div class="glass p mid dt" id="dt"></div>
+    <div class="stack">
+      <div class="glass p"><h3>Your applications</h3><div id="mini" style="margin-top:10px"></div></div>
+      
+      <!-- Resume Analyzer Card -->
+      <div class="glass p" id="resume-analyzer-box" style="border:1px dashed var(--gb);transition:border-color .2s,background .2s">
+        <div class="row" style="justify-content:space-between;align-items:center">
+          <h3>Resume Analyzer</h3>
+          <span class="chip" id="ats-score-chip" style="font-size:11px">ATS: Ready</span>
+        </div>
+        <p class="mute s" id="student-resume-name" style="margin:6px 0 10px">Drop your resume (.pdf, .docx, .txt) or click Upload to parse skills & calculate role match.</p>
+        <div id="analyzed-skills-preview" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px"></div>
+        <input type="file" id="resume-input" accept=".pdf,.doc,.docx,.txt,.rtf,.md" style="display:none">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn sm" id="btn-resume-pick">Upload resume</button>
+          <button class="btn sm o" id="btn-open-analyzer">Detailed Report</button>
+          <button class="btn sm o" id="btn-sample-resume" style="font-size:12px;padding:6px 12px">Try sample</button>
+        </div>
+      </div>
+
+      <div class="glass p"><h3>Ask the placement cell</h3><p class="mute s" style="margin:6px 0 14px">Replies within a working day</p><button class="btn sm" id="btn-msg-cell">Send a message</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="view" id="apps">
+  <div class="ph"><h1>My applications</h1><p>Every application, with what happens next.</p></div>
+  <div class="glass p" style="padding:30px"><div class="pills" id="ap"></div><div id="trk"></div></div>
+</section>
+
+<!-- COMPANY -->
+<section class="view" id="company">
+  <div class="ph">
+    <h1>Find your next hire</h1>
+    <p id="comp-header-note">Verified employer pipeline and applicant management.</p>
+  </div>
+  <div class="pipe" id="company-pipeline">
+    <!-- 4 pipeline columns rendered dynamically -->
+  </div>
+  <div class="two">
+    <div class="glass p"><h2>Post an opportunity</h2>
+      <label for="pt">Role title</label><input id="pt" placeholder="e.g. Data analyst intern">
+      <div class="row" style="gap:12px"><div style="flex:1"><label for="py">Type</label><select id="py"><option>Internship</option><option>Full-time</option></select></div><div style="flex:1"><label for="pl">Location</label><select id="pl"><option>Mumbai</option><option>Remote</option><option>Pune</option></select></div></div>
+      <div class="row" style="gap:12px"><div style="flex:1"><label for="pc">Compensation</label><select id="pc"><option>Paid</option><option>Unpaid</option></select></div><div style="flex:1"><label for="px">Stipend or CTC</label><input id="px" placeholder="e.g. Rs 18,000 / month"></div></div>
+      <label for="ps">Required skills (comma separated)</label><input id="ps" placeholder="e.g. Python, SQL, React">
+      <button class="btn" style="margin-top:22px" id="post">Publish role</button></div>
+    <div class="glass p"><h2>Your open roles</h2><div id="mine" style="margin-top:10px"></div></div>
+  </div>
+</section>
+
+<!-- ADMIN -->
+<section class="view" id="admin">
+  <div class="row" style="justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:22px">
+    <div class="ph" style="margin-bottom:0"><h1>Placement cell</h1><p>Approve companies, manage cohort placements, and review active offers.</p></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn sm o" id="btn-admin-demo">Load demo data</button>
+      <button class="btn sm o" id="btn-admin-clear" style="color:var(--mute)">Clear demo data</button>
+    </div>
+  </div>
+  <div class="two" style="margin-top:0">
+    <div class="glass p"><h2>Companies waiting for approval</h2><div id="apv" style="margin-top:10px"></div></div>
+    <div class="glass p"><h2>Recently placed & active candidates</h2>
+      <div class="list" id="admin-placed-list" style="max-height:420px;overflow:auto"></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTH -->
+<section class="view" id="auth">
+  <div class="glass auth">
+    <div class="l"><h1 style="font-size:clamp(34px,5vw,54px);font-weight:200" id="auth-header-title">Welcome back.</h1><p class="mute" style="margin:14px 0 0;max-width:20em" id="auth-header-sub">Pick up where you left off, or create an account to start applying.</p></div>
+    <div class="r"><h2 id="auth-form-title">Sign in</h2>
+      <div class="seg" id="role"><button aria-pressed="true" data-role="student">Student</button><button aria-pressed="false" data-role="company">Company</button><button aria-pressed="false" data-role="admin">Placement cell</button></div>
+      <div id="auth-extra"></div>
+      <label for="em">College email</label><input id="em" type="email" placeholder="name@college.edu">
+      <label for="pw">Password</label><input id="pw" type="password">
+      <div id="auth-err" class="mute s" style="color:#d9534f;margin-top:10px;display:none"></div>
+      <div class="row" style="margin-top:24px;flex-wrap:wrap">
+        <button class="btn" id="btn-auth-submit">Sign in</button>
+        <button class="btn o" id="btn-auth-toggle">Create account</button>
+      </div>
+      <p class="mute s" style="margin-top:18px">Placement officer default: <b>admin@college.edu</b> / <b>admin123</b></p>
+    </div>
+  </div>
+</section>
+<!-- APTITUDE & CODING VIEW -->
+<section class="view" id="aptitude">
+  <div class="ph"><h1>Online Assessment & Code</h1><p>Practice company screening rounds: solve technical aptitude and code live in the sandbox.</p></div>
+  <div class="two" style="margin-top:0">
+    <!-- Aptitude Quiz -->
+    <div class="glass p">
+      <div class="row" style="justify-content:space-between;margin-bottom:12px">
+        <h2>Part 1: Quantitative & CS Aptitude</h2>
+        <span class="chip high" id="quiz-score-badge">Score: 0/3</span>
+      </div>
+      <div id="quiz-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <!-- Live Code Sandbox -->
+    <div class="glass p">
+      <div class="row" style="justify-content:space-between;margin-bottom:12px">
+        <h2>Part 2: Live Coding Challenge</h2>
+        <span class="chip" id="code-status-chip">Ready</span>
+      </div>
+      <p class="mute s" style="margin-bottom:12px"><b>Problem:</b> Given an array of integers <code>nums</code> and an integer <code>target</code>, write a function that returns indices of two numbers such that they add up to target.</p>
+      <label for="code-input">JavaScript Solution Sandbox</label>
+      <textarea id="code-input" class="code-area" rows="8">function twoSum(nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+    if (map.has(diff)) return [map.get(diff), i];
+    map.set(nums[i], i);
+  }
+  return [];
+}</textarea>
+      <div class="row" style="margin-top:12px;gap:8px;flex-wrap:wrap">
+        <button class="btn sm" id="btn-run-code">Run Test Cases</button>
+        <button class="btn sm o" id="btn-submit-code">Submit Final Assessment</button>
+      </div>
+      <div id="code-console" style="margin-top:14px;padding:12px;border-radius:12px;background:rgba(0,0,0,.2);font-family:monospace;font-size:12.5px;min-height:50px">
+        Click "Run Test Cases" to execute in sandbox...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INTERVIEWS & MULTI-CHANNEL NOTIFICATIONS LOG -->
+<section class="view" id="comp-interviews">
+  <div class="ph"><h1>Interviews, Email & SMS Hub</h1><p>Scheduled campus interviews and automated multi-channel candidate notifications.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:0">
+    <div class="glass p">
+      <h2>Upcoming Interview Schedule</h2>
+      <div id="comp-interviews-list" style="margin-top:12px"></div>
+    </div>
+    <div class="glass p">
+      <h2>Email Invitation Dispatch Log</h2>
+      <div id="comp-email-list" style="margin-top:12px"></div>
+    </div>
+    <div class="glass p">
+      <h2>SMS Notification Dispatch Log</h2>
+      <div id="comp-sms-list" style="margin-top:12px"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Interview Scheduling Modal -->
+<div class="modal-backdrop" id="schedule-modal">
+  <div class="glass p modal-card">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h2>Schedule Candidate Interview</h2>
+      <button id="btn-close-schedule" style="border:0;background:none;font-size:24px;color:var(--mute)">&times;</button>
+    </div>
+    <div id="schedule-modal-content">
+      <input type="hidden" id="sched-app-id">
+      <p class="mute s" style="margin-bottom:14px">Set interview details and instantly notify the candidate via official Email, SMS, and application tracker.</p>
+      <label for="sched-cand-name">Candidate</label>
+      <input id="sched-cand-name" readonly style="opacity:.85">
+      <label for="sched-role">Role</label>
+      <input id="sched-role" readonly style="opacity:.85">
+      <div class="row" style="gap:12px">
+        <div style="flex:1"><label for="sched-date">Date</label><input type="date" id="sched-date"></div>
+        <div style="flex:1"><label for="sched-time">Time</label><input type="time" id="sched-time" value="11:00"></div>
+      </div>
+      <label for="sched-meet">Google Meet / Video Interview Link</label>
+      <input id="sched-meet" value="https://meet.google.com/campus-interview">
+      <div class="row" style="gap:12px">
+        <div style="flex:1">
+          <label for="sched-email">Candidate College Email (for Email Invite)</label>
+          <input id="sched-email" value="candidate@college.edu">
+        </div>
+        <div style="flex:1">
+          <label for="sched-phone">Candidate Mobile (for SMS Alert)</label>
+          <input id="sched-phone" value="+91 98765 43210">
+        </div>
+      </div>
+      <div class="row" style="margin-top:14px;gap:8px">
+        <input type="checkbox" id="sched-email-check" checked style="width:auto">
+        <label for="sched-email-check" style="margin:0;cursor:pointer">Send official interview invitation Email</label>
+      </div>
+      <div class="row" style="margin-top:6px;gap:8px">
+        <input type="checkbox" id="sched-sms-check" checked style="width:auto">
+        <label for="sched-sms-check" style="margin:0;cursor:pointer">Send real-time SMS notification to mobile</label>
+      </div>
+      <div class="row" style="margin-top:24px;justify-content:flex-end;gap:10px">
+        <button class="btn sm o" id="btn-cancel-sched">Cancel</button>
+        <button class="btn sm" id="btn-confirm-sched">Schedule & Dispatch Email + SMS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Career Bot -->
+<button class="bot-fab" id="bot-fab" title="Chat with Campus Career Assistant">
+  <i>💬</i> Career Bot
+</button>
+<div class="bot-window glass" id="bot-window">
+  <div class="bot-header">
+    <div class="row" style="gap:8px">
+      <div class="av" style="width:30px;height:30px;font-size:12px;background:var(--acc);color:var(--btnink)">AI</div>
+      <b>Career Bot</b>
+    </div>
+    <button id="btn-close-bot" style="border:0;background:none;font-size:20px;color:var(--mute)">&times;</button>
+  </div>
+  <div class="bot-body" id="bot-body">
+    <div class="bot-msg ai">Hi! I'm your Campus Placement Assistant. How can I help with your resume, coding rounds, or interview preparation today?</div>
+  </div>
+  <div class="bot-chips">
+    <button data-bot-prompt="What jobs match my profile?">My matched jobs</button>
+    <button data-bot-prompt="How do I improve my ATS score?">Improve ATS score</button>
+    <button data-bot-prompt="Give me technical interview questions">Interview Qs</button>
+    <button data-bot-prompt="Explain aptitude screening test">Aptitude tips</button>
+  </div>
+  <div class="bot-footer">
+    <input id="bot-input" placeholder="Ask about interviews, tests, resume..." style="padding:8px 14px;font-size:13px">
+    <button class="btn sm" id="btn-bot-send">Send</button>
+  </div>
+</div>
+
+<!-- Resume Analyzer Modal -->
+<div class="modal-backdrop" id="analyzer-modal">
+  <div class="glass p modal-card">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h2>Resume ATS Analyzer & Insights</h2>
+      <button id="btn-close-analyzer" style="border:0;background:none;font-size:24px;color:var(--mute)">&times;</button>
+    </div>
+    <div id="analyzer-modal-content"></div>
+  </div>
+</div>
+
+<!-- Candidate Resume Modal for Employers -->
+<div class="modal-backdrop" id="candidate-resume-modal">
+  <div class="glass p modal-card" style="max-width:720px">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:16px;border-bottom:1px solid var(--gb);padding-bottom:12px">
+      <div>
+        <h2 id="crm-name" style="margin:0">Candidate Resume</h2>
+        <span class="mute s" id="crm-subtitle">Applied role and profile breakdown</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="chip high" id="crm-ats-badge">ATS 92/100</span>
+        <button id="btn-close-crm" style="border:0;background:none;font-size:24px;color:var(--mute);cursor:pointer">&times;</button>
+      </div>
+    </div>
+    <div id="candidate-resume-content"></div>
+  </div>
+</div>
+
+<!-- Job Application & Resume Attachment Modal for Students -->
+<div class="modal-backdrop" id="apply-modal">
+  <div class="glass p modal-card" style="max-width:620px">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:16px;border-bottom:1px solid var(--gb);padding-bottom:12px">
+      <div>
+        <h2 id="apply-modal-title" style="margin:0">Submit Application</h2>
+        <span class="mute s" id="apply-modal-sub">Attach your resume and review details</span>
+      </div>
+      <button id="btn-close-apply" style="border:0;background:none;font-size:24px;color:var(--mute);cursor:pointer">&times;</button>
+    </div>
+    <div id="apply-modal-content"></div>
+  </div>
+</div>
+
+<div class="toast glass" id="t" role="status"></div>
+
+<script type="module">
+// ---------------- Selectors & Toast ----------------
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const T = $("#t");
+let tt;
+function toast(m){
+  T.textContent = m;
+  T.classList.add("on");
+  clearTimeout(tt);
+  tt = setTimeout(() => T.classList.remove("on"), 2200);
+}
+
+// ---------------- Persistence & Storage Keys ----------------
+const STORAGE_KEYS = {
+  USERS: 'platform_users',
+  OPPORTUNITIES: 'platform_opportunities',
+  APPLICATIONS: 'platform_applications',
+  RESUME_ANALYSIS: 'platform_resume_analysis'
+};
+const SESSION_USER_KEY = 'platform_session_user_id';
+
+function getStore(k, fallback){
+  try {
+    const val = localStorage.getItem(k);
+    return val ? JSON.parse(val) : fallback;
+  } catch(e) { return fallback; }
+}
+function setStore(k, val){
+  try {
+    localStorage.setItem(k, JSON.stringify(val));
+  } catch(e) { console.error(e); }
+}
+
+// ---------------- Clean Initial State: No Predefined Junk ----------------
+function initDefaults(){
+  // Automatic one-time purge of legacy mock/undefined data so the portal starts 100% clean
+  const PURGE_FLAG = 'platform_v4_clean_state';
+  if (!localStorage.getItem(PURGE_FLAG)) {
+    localStorage.removeItem(STORAGE_KEYS.OPPORTUNITIES);
+    localStorage.removeItem(STORAGE_KEYS.APPLICATIONS);
+    localStorage.removeItem('platform_pending_companies');
+    localStorage.removeItem(STORAGE_KEYS.RESUME_ANALYSIS);
+    localStorage.setItem(PURGE_FLAG, 'true');
+  }
+
+  const users = getStore(STORAGE_KEYS.USERS, []);
+  if (!users.some(u => u.email === 'admin@college.edu')) {
+    users.push({
+      id: 'admin_officer',
+      name: 'Placement Officer',
+      email: 'admin@college.edu',
+      password: 'admin123',
+      role: 'admin'
+    });
+    setStore(STORAGE_KEYS.USERS, users);
+  }
+}
+initDefaults();
+
+// ---------------- Active User Session (sessionStorage per tab) ----------------
+function getCurrentUser(){
+  const uid = sessionStorage.getItem(SESSION_USER_KEY);
+  if (!uid) return null;
+  const users = getStore(STORAGE_KEYS.USERS, []);
+  return users.find(u => u.id === uid) || null;
+}
+function setCurrentUser(user){
+  if (user) sessionStorage.setItem(SESSION_USER_KEY, user.id);
+  else sessionStorage.removeItem(SESSION_USER_KEY);
+  updateNavState();
+}
+
+// ---------------- Navigation & View Switching ----------------
+let currentView = "home";
+let currentMode = "student"; // "student" | "company"
+
+function updateNavState(){
+  const user = getCurrentUser();
+  const authBtn = $("#auth-btn");
+  const brandTitle = $("#brand-title");
+  const modeToggle = $("#mode-toggle-btn");
+  const tabsContainer = $("#tabs");
+
+  if (user && user.role === "company") {
+    currentMode = "company";
+  }
+
+  if (brandTitle) {
+    brandTitle.textContent = currentMode === "company" ? "Platform | Employer Suite" : "Platform | Student Hub";
+  }
+  if (modeToggle) {
+    modeToggle.textContent = currentMode === "company" ? "Student Hub" : "Employer Suite";
+    modeToggle.onclick = () => {
+      currentMode = currentMode === "company" ? "student" : "company";
+      updateNavState();
+      go(currentMode === "company" ? "company" : "home");
+      toast(`Switched to ${currentMode === "company" ? "Employer Suite" : "Student Hub"}`);
+    };
+  }
+
+  // Inject role-tailored navigation tabs
+  if (tabsContainer) {
+    if (currentMode === "company") {
+      tabsContainer.innerHTML = `
+        <button role="tab" data-v="company" aria-selected="${currentView === "company"}">Candidate Pipeline</button>
+        <button role="tab" data-v="comp-interviews" aria-selected="${currentView === "comp-interviews"}">Interviews & SMS</button>
+        <button role="tab" data-v="admin" aria-selected="${currentView === "admin"}">Placement Cell</button>
+      `;
+    } else {
+      tabsContainer.innerHTML = `
+        <button role="tab" data-v="home" aria-selected="${currentView === "home"}">Home</button>
+        <button role="tab" data-v="jobs" aria-selected="${currentView === "jobs"}">Opportunities</button>
+        <button role="tab" data-v="aptitude" aria-selected="${currentView === "aptitude"}">Aptitude & Code</button>
+        <button role="tab" data-v="apps" aria-selected="${currentView === "apps"}">My Applications</button>
+        <button role="tab" data-v="admin" aria-selected="${currentView === "admin"}">Placement Cell</button>
+      `;
+    }
+  }
+
+  if (authBtn) {
+    if (user) {
+      authBtn.textContent = `Sign out (${user.name.split(' ')[0]})`;
+      authBtn.onclick = (e) => {
+        e.stopPropagation();
+        setCurrentUser(null);
+        currentMode = "student";
+        toast("Signed out");
+        updateNavState();
+        go("home");
+      };
+    } else {
+      authBtn.textContent = "Sign in";
+      authBtn.onclick = (e) => {
+        e.stopPropagation();
+        go("auth");
+      };
+    }
+  }
+}
+
+function go(v){
+  if (!v) return;
+  if (v === "company" || v === "comp-interviews") {
+    currentMode = "company";
+  } else if (v === "home" || v === "jobs" || v === "aptitude" || v === "apps") {
+    currentMode = "student";
+  }
+
+  currentView = v;
+  updateNavState();
+
+  $$(".view").forEach(e => e.classList.toggle("on", e.id === v));
+  $$("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.v === v)));
+  scrollTo({top: 0});
+
+  if (v === "home") renderHomeCompanies();
+  if (v === "jobs") listJobs();
+  if (v === "aptitude") renderAptitudeView();
+  if (v === "apps") renderTrackerView();
+  if (v === "company") renderCompanyView();
+  if (v === "comp-interviews") renderCompInterviewsView();
+  if (v === "admin") renderAdminView();
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-go],#tabs button");
+  if (!b) return;
+  const target = b.dataset.go || b.dataset.v;
+  if (target) {
+    e.preventDefault();
+    go(target);
+  }
+});
+
+// ---------------- Theme Management ----------------
+const R = document.documentElement, mq = matchMedia("(prefers-color-scheme: dark)");
+function lab(){
+  const d = R.dataset.theme ? R.dataset.theme === "dark" : mq.matches;
+  $("#th").textContent = d ? "Forest" : "Sand";
+  return d;
+}
+$("#th").onclick = () => {
+  R.dataset.theme = lab() ? "light" : "dark";
+  lab();
+};
+mq.addEventListener("change", () => {
+  if (!R.dataset.theme) lab();
+});
+lab();
+
+// ---------------- Visual Avatars & Initial Helpers ----------------
+const HU = ["#D8C9B3","#BFD1C3","#C6D3DD","#DAD0E2","#E3CFC0"];
+const ini = n => (n || "?").split(" ").map(w => w[0]).join("").slice(0,2).toUpperCase();
+const hue = c => HU[[...(c || "")].reduce((a,x) => a + x.charCodeAt(0), 0) % HU.length];
+
+// ---------------- Normalization & Sanitation (Prevents any 'undefined' output) ----------------
+function normalizeOpp(j) {
+  if (!j || typeof j !== "object") return null;
+  const rawTitle = j.r || j.title || j.role || "";
+  const rawCompany = j.c || j.companyName || j.company || "";
+  const r = String(rawTitle).trim();
+  const c = String(rawCompany).trim();
+
+  // Filter out invalid items or literal "undefined"
+  if (!r || r.toLowerCase() === "undefined" || r.toLowerCase() === "null") return null;
+  if (!c || c.toLowerCase() === "undefined" || c.toLowerCase() === "null") return null;
+
+  const t = String(j.t || j.type || "Internship").trim();
+  const l = String(j.l || j.location || "Remote").trim();
+  const p = String(j.p || j.paid || (j.compensation === "Unpaid" ? "Unpaid" : "Paid")).trim();
+  const x = String(j.x || j.stipend || j.compensation || "To be discussed").trim();
+  const k = Array.isArray(j.k) ? j.k : Array.isArray(j.skills) ? j.skills : [];
+  const d = String(j.d || j.description || `Opportunity at ${c}. Details managed through Platform.`).trim();
+
+  return {
+    ...j,
+    id: j.id ?? (j._id || 'opp_' + Math.random().toString(36).substring(2, 9)),
+    r,
+    c,
+    t: t.toLowerCase() === "undefined" ? "Internship" : t,
+    l: l.toLowerCase() === "undefined" ? "Remote" : l,
+    p: p.toLowerCase() === "undefined" ? "Paid" : p,
+    x: x.toLowerCase() === "undefined" ? "To be discussed" : x,
+    k: k.filter(s => s && String(s).toLowerCase() !== "undefined"),
+    d: d.toLowerCase() === "undefined" ? "Details managed through Platform." : d
+  };
+}
+
+function getOpportunities(){
+  const raw = getStore(STORAGE_KEYS.OPPORTUNITIES, []);
+  if (!Array.isArray(raw)) return [];
+  const valid = [];
+  for (const item of raw) {
+    const norm = normalizeOpp(item);
+    if (norm) valid.push(norm);
+  }
+  return valid;
+}
+
+function sanitizeOpportunitiesStore(){
+  const cleaned = getOpportunities();
+  setStore(STORAGE_KEYS.OPPORTUNITIES, cleaned);
+}
+sanitizeOpportunitiesStore();
+
+// ---------------- Student Skills & Matching ----------------
+function getStudentSkills(){
+  const user = getCurrentUser();
+  if (user && user.role === "student" && user.skills && user.skills.length > 0) {
+    return user.skills;
+  }
+  const savedAnalysis = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+  if (savedAnalysis && savedAnalysis.skills && savedAnalysis.skills.length > 0) {
+    return savedAnalysis.skills;
+  }
+  return [];
+}
+
+function matchOpp(j){
+  const skills = getStudentSkills();
+  const oppSkills = j.k || [];
+  if (!oppSkills.length) return 80;
+  if (!skills.length) return 20;
+  const matched = oppSkills.filter(x => skills.some(s => s.toLowerCase() === x.toLowerCase()));
+  return Math.round((matched.length / oppSkills.length) * 100);
+}
+function matchWord(m){
+  return m >= 66 ? "Strong match" : m >= 33 ? "Partial match" : "Stretch";
+}
+
+// ---------------- Home View ----------------
+function renderHomeCompanies(){
+  const J = getOpportunities();
+  const cos = [...new Set(J.map(j => j.c).filter(Boolean))];
+  const container = $("#cos");
+  if (!container) return;
+  if (!cos.length) {
+    container.innerHTML = `<p class="mute s" style="padding:10px 0">No verified companies currently posting. Companies can register to post roles, or Placement Cell can load demo data.</p>`;
+    return;
+  }
+  container.innerHTML = cos.map(c => `
+    <button class="glass co" data-go="jobs">
+      <span class="av" style="background:${hue(c)}">${ini(c)}</span>
+      <span>
+        <b style="font-weight:500">${c}</b><br>
+        <span class="mute s">${J.filter(j => j.c === c).length} open role${J.filter(j => j.c === c).length > 1 ? "s" : ""}</span>
+      </span>
+    </button>
+  `).join("");
+}
+
+// ---------------- Opportunities View ----------------
+const filterSet = new Set();
+let selJ = null;
+
+function listJobs(){
+  const J = getOpportunities();
+  const q = ($("#q")?.value || "").toLowerCase();
+
+  const o = J.filter(j =>
+    [...filterSet].every(f => [j.t, j.l, j.p].includes(f)) &&
+    ((j.r || "") + " " + (j.c || "") + " " + (j.k || []).join(" ")).toLowerCase().includes(q)
+  ).sort((a,b) => matchOpp(b) - matchOpp(a));
+
+  if (o.length > 0) {
+    if (!o.some(j => j.id === selJ)) selJ = o[0].id;
+  } else {
+    selJ = null;
+  }
+
+  const listEl = $("#list");
+  if (!listEl) return;
+  listEl.innerHTML = o.length
+    ? o.map(j => {
+      const m = matchOpp(j);
+      return `
+        <button class="it" aria-pressed="${j.id === selJ}" data-id="${j.id}" style="justify-content:space-between">
+          <div class="row">
+            <span class="av" style="background:${hue(j.c)}">${ini(j.c)}</span>
+            <span><b style="font-weight:500">${j.r || "Opportunity"}</b><small>${j.c || "Company"}, ${j.x || "To be discussed"}</small></span>
+          </div>
+          <span class="chip ${m >= 65 ? "high" : ""}" style="font-size:11px;padding:3px 7px;margin-left:6px;white-space:nowrap">⚡ ${m}% AI Match</span>
+        </button>
+      `;
+    }).join("")
+    : `<div style="padding:22px 0;text-align:center">
+        <p class="mute">No opportunities match the criteria.</p>
+        <button class="btn sm o" style="margin-top:10px" data-go="company">Post a role</button>
+      </div>`;
+
+  $$("#list .it").forEach(b => {
+    b.onclick = () => {
+      selJ = isNaN(+b.dataset.id) ? b.dataset.id : +b.dataset.id;
+      listJobs();
+    };
+  });
+
+  renderDetail(J);
+  renderMiniApps();
+  renderResumeCard();
+}
+
+function renderDetail(J = getOpportunities()){
+  const dtEl = $("#dt");
+  if (!dtEl) return;
+  const j = J.find(x => x.id === selJ);
+  if (!j || !j.r) {
+    dtEl.innerHTML = `
+      <div style="padding:48px 20px;text-align:center">
+        <h3 style="font-weight:400;margin-bottom:8px">No role selected</h3>
+        <p class="mute s">Click on any opportunity on the left to review details, required skills, and submit an application.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const m = matchOpp(j);
+  const mySkills = getStudentSkills();
+  const oppSkills = j.k || [];
+  const matchedSkills = oppSkills.filter(k => mySkills.some(s => s.toLowerCase() === k.toLowerCase()));
+  const missingSkills = oppSkills.filter(k => !mySkills.some(s => s.toLowerCase() === k.toLowerCase()));
+  const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  const user = getCurrentUser();
+  const isApplied = user ? apps.some(a => a.studentId === user.id && (a.opportunityId === j.id || a.opportunityTitle === j.r)) : false;
+
+  dtEl.innerHTML = `
+    <span class="av l" style="background:${hue(j.c)}">${ini(j.c)}</span>
+    <h1>${j.r || "Opportunity"}</h1>
+    <div class="meta">${j.c || "Company"}, ${j.l || "Location"}</div>
+    <div style="margin:18px 0">
+      <span class="tag">${j.t || "Internship"}</span>
+      <span class="tag">${j.p || "Paid"}</span>
+      <span class="tag">${j.x || "To be discussed"}</span>
+      <span class="tag" style="border-color:var(--acc);font-weight:600">⚡ ${m}% AI Match</span>
+    </div>
+
+    <!-- AI Student-Job Matching Analysis Box -->
+    <div style="background:var(--g2);border:1px solid var(--gb);padding:16px 18px;border-radius:16px;margin:18px 0">
+      <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px">
+        <b style="font-size:14px;display:flex;align-items:center;gap:6px">
+          <span style="color:var(--acc)">⚡</span> AI Student-Job Match Analysis
+        </b>
+        <span class="chip ${m >= 65 ? "high" : ""}">${m}% Profile Compatibility</span>
+      </div>
+      <p class="mute s" style="margin:0 0 10px;line-height:1.45">
+        ${m >= 75 ? `<b>Strong Candidate Fit:</b> Your verified technical background strongly matches ${matchedSkills.length} key required competencies for this position.` :
+          m >= 45 ? `<b>Moderate Candidate Fit:</b> You have valuable overlap in ${matchedSkills.join(", ") || "core fundamentals"}. Strengthening remaining skills will maximize interview success.` :
+          `<b>Growth Candidate Fit:</b> You currently match ${matchedSkills.length} of ${oppSkills.length} required skills. Highlighting relevant coursework can bolster your application.`}
+      </p>
+      <div class="row" style="font-size:12px;gap:12px;flex-wrap:wrap">
+        <div><b style="color:#4CAF50">✓ Matched Skills:</b> ${matchedSkills.length ? matchedSkills.join(", ") : "None yet"}</div>
+        <div><b style="color:var(--mute)">○ Recommended to learn:</b> ${missingSkills.length ? missingSkills.join(", ") : "None - All matched!"}</div>
+      </div>
+    </div>
+
+    <hr>
+    <h3 style="margin-bottom:10px">About the role</h3>
+    <p class="d">${j.d || "Work directly with engineering teams on core platforms."}</p>
+    <h3 style="margin-bottom:12px">Skills they want</h3>
+    <div style="margin-bottom:26px">
+      ${(j.k || []).map(k => `<span class="tag ${mySkills.some(s => s.toLowerCase() === k.toLowerCase()) ? "y" : ""}">${k}</span>`).join("")}
+    </div>
+    <div class="row" style="flex-wrap:wrap">
+      <button class="btn" id="ap1" ${isApplied ? "disabled" : ""}>${isApplied ? "Applied" : "Apply now"}</button>
+      <button class="btn o" id="btn-save-role">Save</button>
+    </div>
+  `;
+
+  const btnApply = $("#ap1");
+  if (btnApply) btnApply.onclick = () => openApplyModal(j);
+  const btnSave = $("#btn-save-role");
+  if (btnSave) btnSave.onclick = () => toast("Saved to your list");
+}
+
+function openApplyModal(job){
+  let user = getCurrentUser();
+  if (!user) {
+    toast("Please sign in as a student to apply.");
+    go("auth");
+    return;
+  }
+  if (user.role !== "student") {
+    toast("Company and placement accounts cannot submit student applications.");
+    return;
+  }
+
+  const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  if (apps.some(a => a.studentId === user.id && (a.opportunityId === job.id || a.opportunityTitle === job.r))) {
+    toast("You have already applied for this role.");
+    return;
+  }
+
+  const modal = $("#apply-modal");
+  const content = $("#apply-modal-content");
+  const titleEl = $("#apply-modal-title");
+  const subEl = $("#apply-modal-sub");
+  if (!modal || !content) return;
+
+  titleEl.textContent = `Apply for ${job.r}`;
+  subEl.textContent = `${job.c} • ${job.l} • ${job.x}`;
+
+  const renderApplyForm = () => {
+    const analysis = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+    const hasResume = !!analysis && !!analysis.fileName;
+    const resumeName = analysis?.fileName || "";
+    const resumeScore = analysis?.score || 0;
+    const resumeSkills = (analysis && analysis.skills && analysis.skills.length) ? analysis.skills : (user.skills || []);
+
+    content.innerHTML = `
+      <div style="margin-bottom:18px">
+        <label style="font-size:13px;font-weight:600;margin-bottom:8px">1. Resume Attachment (Required)</label>
+        ${hasResume ? `
+          <div style="background:var(--g2);border:1px solid var(--gb);padding:14px;border-radius:14px;margin-bottom:10px">
+            <div class="row" style="justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+              <div>
+                <b style="font-size:14px">📄 ${resumeName}</b>
+                <div class="mute s" style="margin-top:2px">ATS Score: <span class="chip high" style="padding:2px 7px;font-size:11px">${resumeScore}/100</span></div>
+              </div>
+              <button class="btn sm o" id="btn-apply-change-resume" style="padding:4px 10px;font-size:12px">Change File</button>
+            </div>
+            ${resumeSkills.length ? `
+              <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:10px">
+                ${resumeSkills.slice(0, 6).map(s => `<span class="tag y" style="font-size:11px;padding:2px 7px">${s}</span>`).join("")}
+                ${resumeSkills.length > 6 ? `<span class="mute s" style="align-self:center">+${resumeSkills.length - 6} more</span>` : ""}
+              </div>
+            ` : ""}
+          </div>
+        ` : `
+          <div style="background:color-mix(in srgb, var(--now) 12%, transparent);border:1px dashed var(--now);padding:18px;border-radius:14px;text-align:center;margin-bottom:12px">
+            <p style="font-weight:500;margin-bottom:4px;color:var(--ink)">⚠️ Resume required to apply</p>
+            <p class="mute s" style="margin-bottom:14px">Please attach your resume so the company can review your qualifications.</p>
+            <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+              <button class="btn sm" id="btn-apply-pick-file">Upload Resume (PDF, DOCX, TXT)</button>
+              <button class="btn sm o" id="btn-apply-load-sample">⚡ Load Sample Tech Resume</button>
+            </div>
+          </div>
+        `}
+        <input type="file" id="apply-file-input" accept=".pdf,.doc,.docx,.txt,.rtf,.md" style="display:none">
+      </div>
+
+      <div style="margin-bottom:18px">
+        <label style="font-size:13px;font-weight:600;margin-bottom:6px">2. Contact Information</label>
+        <div class="row" style="gap:10px">
+          <div style="flex:1">
+            <label for="apply-input-name" style="font-size:11.5px">Full Name</label>
+            <input id="apply-input-name" value="${user.name || ""}" placeholder="Your full name">
+          </div>
+          <div style="flex:1">
+            <label for="apply-input-phone" style="font-size:11.5px">Mobile Number (for SMS updates)</label>
+            <input id="apply-input-phone" value="${user.phone || "+91 98765 43210"}" placeholder="+91 Mobile number">
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label for="apply-input-note" style="font-size:13px;font-weight:600;margin-bottom:6px">3. Note to Recruiter (Optional)</label>
+        <textarea id="apply-input-note" rows="2" placeholder="Highlight why you are interested in this position..."></textarea>
+      </div>
+
+      <div class="row" style="justify-content:flex-end;gap:10px">
+        <button class="btn sm o" id="btn-apply-cancel">Cancel</button>
+        <button class="btn sm" id="btn-apply-submit">Submit Application</button>
+      </div>
+    `;
+
+    const fileInput = $("#apply-file-input");
+    const pickBtn = $("#btn-apply-pick-file");
+    const changeBtn = $("#btn-apply-change-resume");
+    const sampleBtn = $("#btn-apply-load-sample");
+
+    if (pickBtn) pickBtn.onclick = () => fileInput?.click();
+    if (changeBtn) changeBtn.onclick = () => fileInput?.click();
+
+    if (fileInput) {
+      fileInput.onchange = (e) => {
+        const file = e.target.files?.[0];
+        if (file) {
+          handleResumeUpload(file);
+          setTimeout(renderApplyForm, 400);
+        }
+      };
+    }
+
+    if (sampleBtn) {
+      sampleBtn.onclick = () => {
+        analyzeResumeText(SAMPLE_TECH_RESUME_TEXT, "Aarav_Patil_Resume.pdf");
+        toast("Sample tech resume attached (95/100 ATS)!");
+        renderApplyForm();
+      };
+    }
+
+    $("#btn-apply-cancel").onclick = () => modal.classList.remove("on");
+
+    $("#btn-apply-submit").onclick = () => {
+      const curAnalysis = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+      if (!curAnalysis || !curAnalysis.fileName) {
+        toast("Please attach or upload your resume before submitting.");
+        return;
+      }
+
+      const applicantName = ($("#apply-input-name")?.value || "").trim() || user.name;
+      const applicantPhone = ($("#apply-input-phone")?.value || "").trim() || "+91 98765 43210";
+      const applicantNote = ($("#apply-input-note")?.value || "").trim();
+
+      const todayStr = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(new Date());
+      const newApp = {
+        id: 'app_' + Date.now(),
+        opportunityId: job.id,
+        opportunityTitle: job.r,
+        companyName: job.c,
+        studentId: user.id,
+        studentName: applicantName,
+        studentEmail: user.email || `${applicantName.toLowerCase().replace(/\s+/g, '.')}@college.edu`,
+        studentPhone: applicantPhone,
+        studentSkills: (curAnalysis.skills && curAnalysis.skills.length) ? curAnalysis.skills : (user.skills || getStudentSkills()),
+        resumeName: curAnalysis.fileName,
+        atsScore: curAnalysis.score || 88,
+        note: applicantNote,
+        stage: 0,
+        status: "Applied",
+        dates: [todayStr, "", "", "", ""],
+        nextStep: "Application received with resume. Recruiter will review your qualifications.",
+        appliedAt: new Date().toISOString()
+      };
+
+      const updatedApps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+      updatedApps.unshift(newApp);
+      setStore(STORAGE_KEYS.APPLICATIONS, updatedApps);
+
+      modal.classList.remove("on");
+      toast(`Application with resume submitted to ${job.c}!`);
+      listJobs();
+    };
+  };
+
+  renderApplyForm();
+  modal.classList.add("on");
+
+  $("#btn-close-apply").onclick = () => modal.classList.remove("on");
+  modal.onclick = (e) => {
+    if (e.target.id === "apply-modal") modal.classList.remove("on");
+  };
+}
+
+$("#q").oninput = listJobs;
+$$("#fl button").forEach(b => {
+  b.onclick = () => {
+    const k = b.dataset.k;
+    if (filterSet.has(k)) filterSet.delete(k);
+    else filterSet.add(k);
+    b.setAttribute("aria-pressed", filterSet.has(k));
+    listJobs();
+  };
+});
+
+// ---------------- Applications & Tracker View ----------------
+const STAGE_NAMES = ["Applied", "Shortlisted", "Aptitude Cleared", "Interview Scheduled", "Offer Extended"];
+let activeAppIdx = 0;
+
+function getUserApplications(){
+  const user = getCurrentUser();
+  const all = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  if (!Array.isArray(all)) return [];
+  if (user && user.role === "student") {
+    return all.filter(a => a && a.studentId === user.id).map(a => ({
+      id: a.id,
+      c: a.companyName || a.c || "Company",
+      r: a.opportunityTitle || a.r || "Role",
+      s: typeof a.stage === "number" ? a.stage : 0,
+      d: a.dates || ["","","","",""],
+      n: a.nextStep || "Application under review.",
+      meetLink: a.meetLink
+    }));
+  }
+  return [];
+}
+
+function renderMiniApps(){
+  const miniEl = $("#mini");
+  if (!miniEl) return;
+  const A = getUserApplications();
+  if (!A.length) {
+    miniEl.innerHTML = `<p class="mute s" style="padding:6px 0">No applications sent yet.</p>`;
+    return;
+  }
+  miniEl.innerHTML = A.map((a, i) => `
+    <button class="app" data-i="${i}">
+      <span><b style="font-weight:500">${a.r}</b><br><span class="mute s">${a.c}</span></span>
+      <span class="chip ${a.s > 1 ? "n" : ""}">${STAGE_NAMES[a.s]}</span>
+    </button>
+  `).join("");
+
+  $$("#mini .app").forEach(b => {
+    b.onclick = () => {
+      activeAppIdx = +b.dataset.i;
+      go("apps");
+    };
+  });
+}
+
+function renderTrackerView(){
+  const A = getUserApplications();
+  const pillsBox = $("#ap");
+  const trkBox = $("#trk");
+  if (!pillsBox || !trkBox) return;
+
+  if (!A.length) {
+    pillsBox.innerHTML = "";
+    trkBox.innerHTML = `
+      <div style="padding:32px 0;text-align:center">
+        <h3 style="font-weight:400;margin-bottom:8px">No active applications</h3>
+        <p class="mute s" style="max-width:28em;margin:0 auto">Browse open roles in Opportunities and apply to start tracking your progress here in real time.</p>
+      </div>
+    `;
+    return;
+  }
+
+  if (activeAppIdx >= A.length) activeAppIdx = 0;
+  const cur = A[activeAppIdx] || A[0];
+
+  pillsBox.innerHTML = A.map((x, k) => `
+    <button aria-pressed="${k === activeAppIdx}" data-i="${k}">${x.c}</button>
+  `).join("");
+
+  $$("#ap button").forEach(b => {
+    b.onclick = () => {
+      activeAppIdx = +b.dataset.i;
+      renderTrackerView();
+    };
+  });
+
+  const smsLogs = getStore('platform_sms_logs', []);
+  const emailLogs = getStore('platform_email_logs', []);
+  const candSms = smsLogs.find(s => s.appId === cur.id);
+  const candEmail = emailLogs.find(e => e.appId === cur.id);
+
+  trkBox.innerHTML = `
+    ${candEmail ? `
+      <div class="sms-banner" style="border-color:#2196F3;background:color-mix(in srgb, #2196F3 12%, transparent);margin-bottom:10px">
+        <span class="sms-badge" style="background:#2196F3">✉️ EMAIL SENT</span>
+        <div style="font-size:13px"><b>Official invite emailed to ${candEmail.recipient}:</b> "${candEmail.subject}"</div>
+      </div>
+    ` : ""}
+    ${candSms ? `
+      <div class="sms-banner">
+        <span class="sms-badge">📱 SMS ALERT</span>
+        <div style="font-size:13px"><b>Dispatched to ${candSms.phone}:</b> "${candSms.message}"</div>
+      </div>
+    ` : ""}
+    <div class="role">${cur.r}</div>
+    <p class="mute" style="margin:6px 0 0">${cur.c}</p>
+    <div class="line">
+      <div class="fill" id="fl2"></div>
+      ${STAGE_NAMES.map((n, k) => `
+        <div class="st ${k < cur.s ? "done" : k === cur.s ? "now" : ""}">
+          <i></i>
+          <b>${n}</b>
+          <span>${cur.d[k] || "&nbsp;"}</span>
+        </div>
+      `).join("")}
+    </div>
+    <div class="note">
+      <b style="font-weight:500">Next step & Instructions</b><br>
+      <span class="mute">${cur.n}</span>
+      ${cur.meetLink ? `<div style="margin-top:12px"><a href="${cur.meetLink}" target="_blank" class="btn sm" style="text-decoration:none;display:inline-block">Join Video Interview</a></div>` : ""}
+    </div>
+    <div class="row" style="margin-top:22px;flex-wrap:wrap">
+      <button class="btn" id="btn-view-detail">View application</button>
+      <button class="btn o" id="btn-withdraw">Withdraw</button>
+    </div>
+  `;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const fl = $("#fl2");
+      if (fl) fl.style.width = (cur.s / 4 * 80) + "%";
+    });
+  });
+
+  const viewBtn = $("#btn-view-detail");
+  if (viewBtn) viewBtn.onclick = () => toast(`Application for ${cur.r} at ${cur.c}`);
+
+  const withdrawBtn = $("#btn-withdraw");
+  if (withdrawBtn) {
+    withdrawBtn.onclick = () => {
+      if (!confirm(`Withdraw application for ${cur.r}?`)) return;
+      const all = getStore(STORAGE_KEYS.APPLICATIONS, []);
+      const remaining = all.filter(a => a.id !== cur.id);
+      setStore(STORAGE_KEYS.APPLICATIONS, remaining);
+      toast("Application withdrawn");
+      renderTrackerView();
+    };
+  }
+}
+
+// ---------------- Comprehensive Resume Analyzer & ATS Parser ----------------
+const SKILL_DICTIONARY = [
+  "python", "javascript", "typescript", "react", "node.js", "express", "sql", "postgresql",
+  "mongodb", "mysql", "aws", "docker", "kubernetes", "git", "linux", "c++", "java", "c#",
+  "golang", "rust", "html", "css", "tailwind", "fastapi", "django", "flask", "tensorflow",
+  "pytorch", "machine learning", "nlp", "computer vision", "deep learning", "pandas", "numpy",
+  "scikit-learn", "data science", "tableau", "power bi", "graphql", "rest api", "microservices",
+  "ci/cd", "azure", "gcp", "figma", "agile", "spark", "airflow", "kafka", "redis", "spring boot",
+  "opencv", "statistics", "data engineering", "devops"
+];
+
+const SAMPLE_TECH_RESUME_TEXT = `Aarav Patil | aarav.p@college.edu | github.com/aaravpatil | linkedin.com/in/aarav
+B.Tech in Computer Engineering | GPA: 9.1 / 10.0
+
+TECHNICAL SKILLS:
+- Languages: Python, JavaScript, TypeScript, SQL, C++, HTML, CSS
+- Frameworks & Libs: React, Node.js, Express, FastAPI, PyTorch, TensorFlow, Pandas, NumPy, Scikit-learn
+- Cloud & Tools: Git, Docker, AWS, Linux, PostgreSQL, REST APIs
+
+EXPERIENCE & PROJECTS:
+Machine Learning Research Intern
+- Engineered computer vision neural networks with PyTorch and OpenCV, improving label classification by 32%.
+- Built REST API endpoints with FastAPI and deployed containerized services using Docker on AWS.
+- Designed automated SQL pipelines that reduced database query latency by 45%.`;
+
+function analyzeResumeText(rawText, fileName = "Resume.pdf") {
+  const text = (rawText || "").toLowerCase();
+  
+  // 1. Detected Skills (No fake fallback skills)
+  const detectedSkills = [];
+  SKILL_DICTIONARY.forEach(skill => {
+    const escaped = skill.replace(".", "\\.").replace("+", "\\+");
+    const regex = new RegExp(`\\b${escaped}\\b`, "i");
+    if (regex.test(text) || text.includes(skill)) {
+      if (!detectedSkills.includes(skill)) detectedSkills.push(skill);
+    }
+  });
+
+  // 2. Score Calculation
+  let score = 25; // baseline
+  if (detectedSkills.length >= 8) score += 40;
+  else if (detectedSkills.length >= 5) score += 30;
+  else if (detectedSkills.length >= 2) score += 20;
+  else if (detectedSkills.length >= 1) score += 10;
+
+  const hasEducation = /\b(degree|b\.?tech|b\.?e|computer|engineering|university|college|gpa|cgpa)\b/i.test(text);
+  if (hasEducation) score += 15;
+
+  const hasExperience = /\b(project|experience|intern|developed|built|engineered|implemented|designed)\b/i.test(text);
+  if (hasExperience) score += 15;
+
+  const hasContact = /\b(email|github|linkedin|phone|portfolio|@|\.edu|\.com)\b/i.test(text);
+  if (hasContact) score += 10;
+
+  score = Math.min(Math.max(score, 30), 98);
+
+  // 3. Actionable Recommendations
+  const recs = [];
+  if (detectedSkills.length < 5) {
+    recs.push("Increase technical keyword density (e.g. Docker, SQL, REST APIs, Git).");
+  }
+  if (!/\b(improved|increased|reduced|achieved|\d+%)\b/i.test(text)) {
+    recs.push("Add quantifiable metrics to project outcomes (e.g. 'Reduced query latency by 45%').");
+  }
+  if (!text.includes("aws") && !text.includes("docker") && !text.includes("gcp") && !text.includes("azure")) {
+    recs.push("Cloud and container skills (AWS, Docker) significantly increase recruiter callbacks.");
+  }
+  if (!text.includes("github") && !text.includes("linkedin")) {
+    recs.push("Include clickable links to your GitHub and LinkedIn profiles.");
+  }
+  if (recs.length === 0) {
+    recs.push("Excellent keyword alignment and impact-driven accomplishments detected.");
+  }
+
+  const analysis = {
+    fileName,
+    skills: detectedSkills,
+    score,
+    recommendations: recs,
+    analyzedAt: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })
+  };
+
+  setStore(STORAGE_KEYS.RESUME_ANALYSIS, analysis);
+
+  // Sync to student profile
+  const user = getCurrentUser();
+  if (user && user.role === "student") {
+    const users = getStore(STORAGE_KEYS.USERS, []);
+    const u = users.find(x => x.id === user.id);
+    if (u) {
+      u.resumeName = fileName;
+      u.skills = Array.from(new Set([...(u.skills || []), ...analysis.skills]));
+      setStore(STORAGE_KEYS.USERS, users);
+    }
+  }
+
+  return analysis;
+}
+
+function renderResumeCard(){
+  const analysis = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+  const user = getCurrentUser();
+  const chipEl = $("#ats-score-chip");
+  const nameEl = $("#student-resume-name");
+  const previewEl = $("#analyzed-skills-preview");
+
+  if (!chipEl || !nameEl || !previewEl) return;
+
+  if (analysis && analysis.skills && analysis.skills.length > 0) {
+    chipEl.textContent = `ATS: ${analysis.score}/100`;
+    chipEl.className = "chip high";
+    nameEl.textContent = `${analysis.fileName} • ${analysis.skills.length} skills extracted (${analysis.analyzedAt})`;
+    previewEl.innerHTML = analysis.skills.slice(0, 6).map(s => `<span class="tag" style="padding:2px 10px;font-size:12px">${s}</span>`).join("") +
+      (analysis.skills.length > 6 ? `<span class="tag" style="padding:2px 10px;font-size:12px">+${analysis.skills.length - 6} more</span>` : "");
+  } else if (analysis) {
+    chipEl.textContent = `ATS: ${analysis.score}/100`;
+    chipEl.className = "chip";
+    nameEl.textContent = `${analysis.fileName} (Parsed, 0 skills matched)`;
+    previewEl.innerHTML = `<span class="mute s">Click Detailed Report to add skills manually</span>`;
+  } else {
+    chipEl.textContent = "Not analyzed";
+    chipEl.className = "chip";
+    nameEl.textContent = user?.resumeName ? `${user.resumeName} (Upload to analyze)` : "Upload resume (.pdf, .docx, .txt) or click Try sample to analyze.";
+    previewEl.innerHTML = "";
+  }
+}
+
+// Open Analysis Modal
+function openAnalyzerModal(){
+  const modal = $("#analyzer-modal");
+  const content = $("#analyzer-modal-content");
+  if (!modal || !content) return;
+
+  const analysis = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null) || {
+    fileName: "No resume uploaded yet",
+    score: 40,
+    skills: getStudentSkills(),
+    recommendations: ["Upload a resume (.pdf, .docx, .txt) or paste your experience below to extract skills."],
+    analyzedAt: "Pending"
+  };
+
+  const opportunities = getOpportunities();
+
+  content.innerHTML = `
+    <div class="row" style="justify-content:space-between;background:var(--g2);padding:14px 18px;border-radius:18px;margin-bottom:16px;align-items:center;flex-wrap:wrap;gap:10px">
+      <div>
+        <b style="font-size:17px">${analysis.fileName}</b>
+        <div class="mute s">Analyzed: ${analysis.analyzedAt}</div>
+      </div>
+      <div>
+        <span class="chip ${analysis.score >= 70 ? "high" : ""}" style="font-size:14px;padding:6px 14px">
+          ${analysis.score} / 100 ATS Score
+        </span>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <h3 style="margin:0">Extracted Skills (${analysis.skills.length})</h3>
+      <span class="mute s">Click &times; to remove</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px" id="modal-skills-list">
+      ${analysis.skills.length ? analysis.skills.map((s, idx) => `
+        <span class="tag y" style="display:inline-flex;align-items:center;gap:6px">
+          ${s}
+          <button type="button" data-del-skill="${idx}" style="border:0;background:none;padding:0 2px;cursor:pointer;color:var(--mute);font-size:14px">&times;</button>
+        </span>
+      `).join("") : `<p class="mute s">No skills extracted yet. Add custom skills below or upload a resume.</p>`}
+    </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:20px">
+      <input id="input-custom-skill" placeholder="Add custom skill (e.g. Docker, PyTorch, SQL)" style="flex:1;padding:8px 16px;font-size:13px">
+      <button class="btn sm" id="btn-add-custom-skill">Add skill</button>
+    </div>
+
+    <h3 style="margin-bottom:8px">ATS Health & Recommendations</h3>
+    <ul style="margin:0 0 18px;padding-left:20px;font-size:14px;line-height:1.6" class="mute">
+      ${analysis.recommendations.map(r => `<li>${r}</li>`).join("")}
+    </ul>
+
+    <h3 style="margin-bottom:10px">Role Compatibility Match</h3>
+    ${opportunities.length > 0 ? `
+      <div style="max-height:160px;overflow-y:auto;border:1px solid var(--gb);border-radius:14px;padding:8px;margin-bottom:20px">
+        ${opportunities.map(j => {
+          const score = matchOpp(j);
+          return `
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 6px;border-top:1px solid var(--gb)">
+              <div><b>${j.r}</b> <span class="mute s">(${j.c})</span></div>
+              <span class="chip ${score >= 60 ? "high" : ""}">${score}% match</span>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    ` : `<p class="mute s" style="margin-bottom:20px">No active job opportunities posted to match against yet.</p>`}
+
+    <div style="border-top:1px solid var(--gb);padding-top:16px">
+      <h3 style="margin-bottom:6px">Paste Resume Content</h3>
+      <textarea id="paste-resume-box" rows="3" placeholder="Paste your resume text, bio or technical project bullets to re-analyze..."></textarea>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap">
+        <button class="btn sm o" id="btn-modal-sample">Load sample resume</button>
+        <button class="btn sm" id="btn-analyze-pasted">Analyze text</button>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add("on");
+
+  // Delete skill buttons
+  $$("#modal-skills-list button[data-del-skill]").forEach(btn => {
+    btn.onclick = () => {
+      const idx = +btn.dataset.delSkill;
+      const cur = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+      if (cur && cur.skills) {
+        cur.skills.splice(idx, 1);
+        setStore(STORAGE_KEYS.RESUME_ANALYSIS, cur);
+        const user = getCurrentUser();
+        if (user && user.role === "student") {
+          const users = getStore(STORAGE_KEYS.USERS, []);
+          const u = users.find(x => x.id === user.id);
+          if (u) { u.skills = cur.skills; setStore(STORAGE_KEYS.USERS, users); }
+        }
+        renderResumeCard();
+        openAnalyzerModal();
+        listJobs();
+      }
+    };
+  });
+
+  // Add custom skill
+  const btnAddCustom = $("#btn-add-custom-skill");
+  const inputCustom = $("#input-custom-skill");
+  if (btnAddCustom && inputCustom) {
+    const doAdd = () => {
+      const skillName = (inputCustom.value || "").trim().toLowerCase();
+      if (!skillName) return;
+      let cur = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+      if (!cur) {
+        cur = { fileName: "Resume.pdf", score: 65, skills: [], recommendations: ["Keep your skills up to date."], analyzedAt: "Today" };
+      }
+      if (!cur.skills.includes(skillName)) {
+        cur.skills.push(skillName);
+        cur.score = Math.min(98, cur.score + 6);
+        setStore(STORAGE_KEYS.RESUME_ANALYSIS, cur);
+        const user = getCurrentUser();
+        if (user && user.role === "student") {
+          const users = getStore(STORAGE_KEYS.USERS, []);
+          const u = users.find(x => x.id === user.id);
+          if (u) { u.skills = cur.skills; setStore(STORAGE_KEYS.USERS, users); }
+        }
+        toast(`Added skill: ${skillName}`);
+        renderResumeCard();
+        openAnalyzerModal();
+        listJobs();
+      }
+    };
+    btnAddCustom.onclick = doAdd;
+    inputCustom.onkeydown = (e) => { if (e.key === "Enter") doAdd(); };
+  }
+
+  // Paste text analyze
+  $("#btn-analyze-pasted").onclick = () => {
+    const raw = ($("#paste-resume-box")?.value || "").trim();
+    if (!raw) { toast("Please paste text to analyze."); return; }
+    analyzeResumeText(raw, "Pasted_Resume.txt");
+    toast("Resume text analyzed!");
+    renderResumeCard();
+    openAnalyzerModal();
+    listJobs();
+  };
+
+  // Sample resume button inside modal
+  $("#btn-modal-sample").onclick = () => {
+    analyzeResumeText(SAMPLE_TECH_RESUME_TEXT, "Aarav_Patil_Resume.pdf");
+    toast("Sample tech resume loaded & analyzed!");
+    renderResumeCard();
+    openAnalyzerModal();
+    listJobs();
+  };
+}
+
+$("#btn-open-analyzer").onclick = openAnalyzerModal;
+$("#btn-close-analyzer").onclick = () => $("#analyzer-modal").classList.remove("on");
+$("#analyzer-modal").onclick = e => { if (e.target.id === "analyzer-modal") $("#analyzer-modal").classList.remove("on"); };
+const btnHomeAnalyzer = $("#btn-home-analyzer");
+if (btnHomeAnalyzer) btnHomeAnalyzer.onclick = openAnalyzerModal;
+
+// Sample resume trigger on sidebar card
+const btnSampleResume = $("#btn-sample-resume");
+if (btnSampleResume) {
+  btnSampleResume.onclick = () => {
+    analyzeResumeText(SAMPLE_TECH_RESUME_TEXT, "Aarav_Patil_Resume.pdf");
+    toast("Sample resume analyzed with 95/100 ATS score!");
+    renderResumeCard();
+    openAnalyzerModal();
+    listJobs();
+  };
+}
+
+// Robust File Handler (supports PDF, DOCX, TXT, MD, ArrayBuffer)
+function handleResumeUpload(file) {
+  if (!file) return;
+  toast(`Analyzing ${file.name}...`);
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    try {
+      const buffer = event.target.result;
+      let text = "";
+      if (typeof buffer === "string") {
+        text = buffer;
+      } else {
+        const uint8 = new Uint8Array(buffer);
+        const chunks = [];
+        let curr = "";
+        for (let i = 0; i < uint8.length; i++) {
+          const byte = uint8[i];
+          if ((byte >= 32 && byte <= 126) || byte === 10 || byte === 13 || byte === 9) {
+            curr += String.fromCharCode(byte);
+            if (curr.length > 400) {
+              chunks.push(curr);
+              curr = "";
+            }
+          } else {
+            if (curr.length >= 2) chunks.push(curr);
+            curr = " ";
+          }
+        }
+        if (curr.length > 0) chunks.push(curr);
+        text = chunks.join(" ");
+      }
+
+      const analysis = analyzeResumeText(text, file.name);
+      toast(`Analyzed ${file.name}: ATS Score ${analysis.score}/100!`);
+      renderResumeCard();
+      openAnalyzerModal();
+      listJobs();
+    } catch (err) {
+      console.error(err);
+      const analysis = analyzeResumeText(file.name, file.name);
+      toast(`Analyzed ${file.name}`);
+      renderResumeCard();
+      openAnalyzerModal();
+      listJobs();
+    }
+  };
+
+  reader.onerror = () => {
+    toast(`Could not read file`);
+  };
+
+  reader.readAsArrayBuffer(file);
+}
+
+// File input handler
+const resumeInput = $("#resume-input");
+const btnResumePick = $("#btn-resume-pick");
+if (btnResumePick) btnResumePick.onclick = () => resumeInput?.click();
+if (resumeInput) {
+  resumeInput.onchange = (e) => {
+    const file = e.target.files?.[0];
+    if (file) handleResumeUpload(file);
+  };
+}
+
+// Drag & drop on resume box
+const resumeBox = $("#resume-analyzer-box");
+if (resumeBox) {
+  resumeBox.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    resumeBox.style.borderColor = "var(--acc)";
+    resumeBox.style.background = "var(--g)";
+  });
+  resumeBox.addEventListener("dragleave", () => {
+    resumeBox.style.borderColor = "var(--gb)";
+    resumeBox.style.background = "var(--g2)";
+  });
+  resumeBox.addEventListener("drop", (e) => {
+    e.preventDefault();
+    resumeBox.style.borderColor = "var(--gb)";
+    resumeBox.style.background = "var(--g2)";
+    const file = e.dataTransfer?.files?.[0];
+    if (file) handleResumeUpload(file);
+  });
+}
+
+// Ask placement cell
+const btnMsgCell = $("#btn-msg-cell");
+if (btnMsgCell) {
+  btnMsgCell.onclick = () => {
+    const q = prompt("Ask the placement officer a question:");
+    if (q && q.trim()) toast("Message sent to the placement officer");
+  };
+}
+
+// ---------------- Company View ----------------
+function renderCompanyView(){
+  const user = getCurrentUser();
+  const noteEl = $("#comp-header-note");
+  if (noteEl) {
+    if (user && user.role === "company") {
+      noteEl.textContent = `${user.name}, ${user.status === "approved" ? "verified employer" : "pending review"}.`;
+    } else {
+      noteEl.textContent = "Employer pipeline and candidate applications management.";
+    }
+  }
+
+  const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  const pipeEl = $("#company-pipeline");
+  if (!pipeEl) return;
+
+  const stages = [
+    { name: "Applied", s: 0 },
+    { name: "Shortlisted", s: 1 },
+    { name: "Aptitude Cleared", s: 2 },
+    { name: "Interview Scheduled", s: 3 },
+    { name: "Offer Extended", s: 4 }
+  ];
+
+  pipeEl.innerHTML = stages.map(st => {
+    const list = apps.filter(a => a && a.stage === st.s && (!user || user.role !== "company" || a.companyName === user.name || a.c === user.name));
+    return `
+      <div class="glass p">
+        <h3>${st.name} <span class="mute">(${list.length})</span></h3>
+        ${list.length ? list.map(c => `
+          <div class="cand" style="justify-content:space-between;flex-wrap:wrap;gap:8px">
+            <div class="row" data-view-resume="${c.id}" style="cursor:pointer" title="Click to view candidate resume">
+              <span class="av" style="background:${hue(c.studentName)}">${ini(c.studentName)}</span>
+              <div>
+                <b>${c.studentName || "Student"}</b>
+                <small>${(c.studentSkills || []).slice(0, 3).join(", ") || c.opportunityTitle || "Applicant"}</small>
+              </div>
+            </div>
+            <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
+              <button class="btn sm o" data-view-resume="${c.id}" style="padding:4px 8px;font-size:11px" title="View full resume">📄 Resume</button>
+              ${st.s < 3 ? `
+                <button class="btn sm o" data-schedule="${c.id}" style="padding:4px 8px;font-size:11px">Schedule</button>
+                <button class="btn sm o" data-advance="${c.id}" data-target="${st.s + 1}" style="padding:4px 8px;font-size:11px">
+                  ${st.s === 0 ? "Shortlist" : st.s === 1 ? "Aptitude Pass" : "Interview"} &rarr;
+                </button>
+              ` : st.s === 3 ? `
+                <button class="btn sm" data-advance="${c.id}" data-target="4" style="padding:4px 10px;font-size:11px">Extend Offer</button>
+              ` : `<span class="chip high" style="font-size:11px">Offered</span>`}
+            </div>
+          </div>
+        `).join("") : `
+          <p class="mute s" style="padding:18px 0;text-align:center">No candidates in this stage</p>
+        `}
+      </div>
+    `;
+  }).join("");
+
+  $$("button[data-schedule]").forEach(btn => {
+    btn.onclick = () => openScheduleModal(btn.dataset.schedule);
+  });
+
+  $$("[data-view-resume]").forEach(btn => {
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      openCandidateResumeModal(btn.dataset.viewResume);
+    };
+  });
+
+  $$("button[data-advance]").forEach(btn => {
+    btn.onclick = () => {
+      const id = btn.dataset.advance;
+      const target = +btn.dataset.target;
+      const all = getStore(STORAGE_KEYS.APPLICATIONS, []);
+      const item = all.find(a => a.id === id);
+      if (item) {
+        item.stage = target;
+        item.status = STAGE_NAMES[target];
+        if (!item.dates) item.dates = ["","","","",""];
+        const today = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(new Date());
+        item.dates[target] = today;
+        const notes = [
+          "Application received.",
+          "Shortlisted by employer review.",
+          "Aptitude & technical screening cleared.",
+          "Interview scheduled with technical panel.",
+          "Offer extended! Formal placement offer ready."
+        ];
+        item.nextStep = notes[target] || "Next step updated.";
+        setStore(STORAGE_KEYS.APPLICATIONS, all);
+        toast(`Candidate moved to ${STAGE_NAMES[target]}`);
+        renderCompanyView();
+      }
+    };
+  });
+
+  renderCompanyRoles();
+}
+
+function renderCompanyRoles(){
+  const J = getOpportunities();
+  const mineEl = $("#mine");
+  if (!mineEl) return;
+  const user = getCurrentUser();
+  const list = (user && user.role === "company") ? J.filter(j => j.c === user.name) : J;
+
+  mineEl.innerHTML = list.length ? list.map(m => `
+    <div class="li">
+      <div>
+        <h3>${m.r || "Opportunity"}</h3>
+        <span class="mute s">${m.c || "Company"}, ${m.l || "Remote"} • ${m.x || "To be discussed"}</span>
+      </div>
+      <span class="chip">Open</span>
+    </div>
+  `).join("") : `<p class="mute s" style="padding:14px 0">No open roles yet. Publish one on the left.</p>`;
+}
+
+$("#post").onclick = () => {
+  const t = ($("#pt")?.value || "").trim();
+  if (!t || t.toLowerCase() === "undefined") { toast("Enter a role title first"); return; }
+  const user = getCurrentUser();
+  const companyName = (user && user.name && user.name.trim() !== "undefined")
+    ? user.name.trim()
+    : "Registered Company";
+
+  const J = getOpportunities();
+  const newRole = {
+    id: Date.now(),
+    r: t,
+    c: companyName,
+    t: $("#py")?.value || "Internship",
+    l: $("#pl")?.value || "Mumbai",
+    p: $("#pc")?.value || "Paid",
+    x: ($("#px")?.value || "").trim() || "To be discussed",
+    k: ($("#ps")?.value || "python, sql").split(",").map(s => s.trim().toLowerCase()).filter(s => s && s !== 'undefined'),
+    d: `New role posted by ${companyName}. Details and interview procedures are managed through Platform.`
+  };
+
+  J.unshift(newRole);
+  setStore(STORAGE_KEYS.OPPORTUNITIES, J);
+  $("#pt").value = "";
+  if ($("#px")) $("#px").value = "";
+  if ($("#ps")) $("#ps").value = "";
+  renderCompanyView();
+  toast("Published. Students can see it now");
+};
+
+// ---------------- Aptitude & Coding Assessment Suite ----------------
+const APTITUDE_QUESTIONS = [
+  {
+    q: "A train running at 54 km/hr crosses a platform in 20 seconds. If the length of the train is 120m, what is the length of the platform?",
+    opts: ["150m", "180m", "200m", "220m"],
+    ans: 1,
+    exp: "Speed = 54 * (5/18) = 15 m/s. Total distance = 15 * 20 = 300m. Platform length = 300 - 120 = 180m."
+  },
+  {
+    q: "Which data structure is primarily used to implement Breadth-First Search (BFS) on graphs and trees?",
+    opts: ["Stack", "Queue", "Priority Queue", "Binary Search Tree"],
+    ans: 1,
+    exp: "BFS visits nodes level by level using a First-In-First-Out (FIFO) Queue."
+  },
+  {
+    q: "What is the worst-case time complexity of QuickSort when the pivot is always chosen as the smallest element?",
+    opts: ["O(n log n)", "O(n)", "O(n²)", "O(log n)"],
+    ans: 2,
+    exp: "If partitions are completely unbalanced, recurrence becomes T(n) = T(n-1) + O(n), yielding O(n²)."
+  }
+];
+
+let userQuizAnswers = {};
+
+function renderAptitudeView(){
+  const container = $("#quiz-container");
+  if (!container) return;
+
+  container.innerHTML = APTITUDE_QUESTIONS.map((item, qIdx) => `
+    <div style="margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--gb)">
+      <p style="font-weight:500;margin-bottom:8px">Q${qIdx + 1}. ${item.q}</p>
+      ${item.opts.map((opt, oIdx) => {
+        const isChosen = userQuizAnswers[qIdx] === oIdx;
+        const isAnswered = typeof userQuizAnswers[qIdx] === "number";
+        const isCorrect = isAnswered && oIdx === item.ans;
+        const isWrong = isAnswered && isChosen && oIdx !== item.ans;
+        return `
+          <div class="quiz-opt ${isCorrect ? "correct" : isWrong ? "wrong" : ""}" data-q="${qIdx}" data-o="${oIdx}">
+            <input type="radio" name="q_${qIdx}" ${isChosen ? "checked" : ""} style="width:auto">
+            <span>${opt}</span>
+            ${isCorrect ? `<span style="margin-left:auto;color:#4CAF50;font-weight:600">✓ Correct</span>` : ""}
+            ${isWrong ? `<span style="margin-left:auto;color:#F44336;font-weight:600">✗ Incorrect</span>` : ""}
+          </div>
+        `;
+      }).join("")}
+      ${typeof userQuizAnswers[qIdx] === "number" ? `
+        <p class="mute s" style="margin-top:6px;font-style:italic">${item.exp}</p>
+      ` : ""}
+    </div>
+  `).join("");
+
+  $$("#quiz-container .quiz-opt").forEach(el => {
+    el.onclick = () => {
+      const q = +el.dataset.q;
+      const o = +el.dataset.o;
+      userQuizAnswers[q] = o;
+      updateQuizScore();
+      renderAptitudeView();
+    };
+  });
+
+  updateQuizScore();
+  setupCodeSandbox();
+}
+
+function updateQuizScore(){
+  let correct = 0;
+  APTITUDE_QUESTIONS.forEach((item, idx) => {
+    if (userQuizAnswers[idx] === item.ans) correct++;
+  });
+  const badge = $("#quiz-score-badge");
+  if (badge) badge.textContent = `Score: ${correct}/${APTITUDE_QUESTIONS.length}`;
+}
+
+function setupCodeSandbox(){
+  const btnRun = $("#btn-run-code");
+  const btnSubmit = $("#btn-submit-code");
+  const consoleEl = $("#code-console");
+  const statusChip = $("#code-status-chip");
+
+  if (btnRun) {
+    btnRun.onclick = () => {
+      const code = ($("#code-input")?.value || "").trim();
+      consoleEl.innerHTML = "<span class='mute'>Executing test cases in sandbox...</span>";
+      try {
+        const fn = new Function(`${code}; return twoSum;`)();
+        const test1 = JSON.stringify(fn([2,7,11,15], 9));
+        const test2 = JSON.stringify(fn([3,2,4], 6));
+        const test3 = JSON.stringify(fn([3,3], 6));
+
+        const pass1 = test1 === "[0,1]";
+        const pass2 = test2 === "[1,2]";
+        const pass3 = test3 === "[0,1]";
+
+        consoleEl.innerHTML = `
+          <div style="color:${pass1 ? "#4CAF50" : "#F44336"}">Test 1: nums=[2,7,11,15], target=9 -> Output: ${test1} ${pass1 ? "✓ Passed" : "✗ Failed"}</div>
+          <div style="color:${pass2 ? "#4CAF50" : "#F44336"}">Test 2: nums=[3,2,4], target=6 -> Output: ${test2} ${pass2 ? "✓ Passed" : "✗ Failed"}</div>
+          <div style="color:${pass3 ? "#4CAF50" : "#F44336"}">Test 3: nums=[3,3], target=6 -> Output: ${test3} ${pass3 ? "✓ Passed" : "✗ Failed"}</div>
+        `;
+        if (pass1 && pass2 && pass3) {
+          if (statusChip) { statusChip.textContent = "3/3 Passed"; statusChip.className = "chip high"; }
+          toast("All 3 test cases passed successfully!");
+        } else {
+          if (statusChip) { statusChip.textContent = "Tests Failed"; statusChip.className = "chip n"; }
+        }
+      } catch (err) {
+        consoleEl.innerHTML = `<span style="color:#F44336">Runtime Error: ${err.message}</span>`;
+      }
+    };
+  }
+
+  if (btnSubmit) {
+    btnSubmit.onclick = () => {
+      let correct = 0;
+      APTITUDE_QUESTIONS.forEach((item, idx) => {
+        if (userQuizAnswers[idx] === item.ans) correct++;
+      });
+      const totalScore = Math.round((correct / APTITUDE_QUESTIONS.length) * 50 + 50);
+      toast(`Assessment submitted! Score: ${totalScore}/100. Recorded in profile.`);
+      
+      const user = getCurrentUser();
+      if (user) {
+        const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+        apps.forEach(a => {
+          if (a.studentId === user.id && a.stage < 2) {
+            a.stage = 2;
+            a.status = "Aptitude Cleared";
+            if (!a.dates) a.dates = ["","","","",""];
+            a.dates[2] = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(new Date());
+            a.nextStep = `Aptitude screening passed with score ${totalScore}/100. Waiting for company interview schedule.`;
+          }
+        });
+        setStore(STORAGE_KEYS.APPLICATIONS, apps);
+      }
+    };
+  }
+}
+
+// ---------------- Company Interviews, Email & SMS Dispatching ----------------
+function renderCompInterviewsView(){
+  const user = getCurrentUser();
+  const interviews = getStore('platform_interviews', []);
+  const emailLogs = getStore('platform_email_logs', []);
+  const smsLogs = getStore('platform_sms_logs', []);
+
+  const listEl = $("#comp-interviews-list");
+  const emailEl = $("#comp-email-list");
+  const smsEl = $("#comp-sms-list");
+
+  if (listEl) {
+    const myInterviews = (user && user.role === "company")
+      ? interviews.filter(i => i.companyName === user.name)
+      : interviews;
+
+    listEl.innerHTML = myInterviews.length ? myInterviews.map(i => `
+      <div class="li">
+        <div>
+          <b>${i.studentName}</b> — <span class="mute s">${i.role}</span>
+          <div class="mute s">Scheduled: ${i.date} at ${i.time}</div>
+          <div style="font-size:12px;margin-top:2px"><a href="${i.meetLink}" target="_blank" style="color:var(--acc)">Open Video Meeting</a></div>
+        </div>
+        <span class="chip high">Confirmed</span>
+      </div>
+    `).join("") : `<p class="mute s">No interviews scheduled yet. Head to Candidate Pipeline to schedule one.</p>`;
+  }
+
+  if (emailEl) {
+    emailEl.innerHTML = emailLogs.length ? emailLogs.map(e => `
+      <div class="li">
+        <div>
+          <b>To: ${e.recipient} (${e.candidate})</b>
+          <div style="font-size:12.5px;margin-top:2px;font-weight:500">${e.subject}</div>
+          <div class="mute s" style="margin-top:2px">${e.timestamp}</div>
+        </div>
+        <span class="chip" style="color:#2196F3;border-color:#2196F3">✓ Sent</span>
+      </div>
+    `).join("") : `<p class="mute s">No email dispatches yet.</p>`;
+  }
+
+  if (smsEl) {
+    smsEl.innerHTML = smsLogs.length ? smsLogs.map(s => `
+      <div class="li">
+        <div>
+          <b>To: ${s.phone} (${s.candidate})</b>
+          <div style="font-size:12.5px;margin-top:2px">"${s.message}"</div>
+          <span class="mute s">${s.timestamp}</span>
+        </div>
+        <span class="chip" style="color:#4CAF50;border-color:#4CAF50">✓ Delivered</span>
+      </div>
+    `).join("") : `<p class="mute s">No SMS dispatches yet.</p>`;
+  }
+}
+
+function openCandidateResumeModal(appId){
+  const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  const app = apps.find(a => a.id === appId);
+  if (!app) return;
+
+  const modal = $("#candidate-resume-modal");
+  const content = $("#candidate-resume-content");
+  const nameEl = $("#crm-name");
+  const subEl = $("#crm-subtitle");
+  const atsBadge = $("#crm-ats-badge");
+
+  if (!modal || !content) return;
+
+  const candName = app.studentName || "Candidate";
+  const roleName = app.opportunityTitle || "Role";
+  const compName = app.companyName || "Company";
+  const resumeFile = app.resumeName || `${candName.replace(/\s+/g, '_')}_Resume.pdf`;
+  const skills = (app.studentSkills && app.studentSkills.length) ? app.studentSkills : ["python", "sql", "git", "react"];
+  const score = app.atsScore || 90;
+  const email = app.studentEmail || `${candName.toLowerCase().replace(/\s+/g, '.')}@college.edu`;
+  const phone = app.studentPhone || "+91 98765 43210";
+
+  nameEl.textContent = candName;
+  subEl.textContent = `Applied for: ${roleName} (${compName}) • Document: ${resumeFile}`;
+  atsBadge.textContent = `ATS: ${score}/100`;
+  atsBadge.className = score >= 75 ? "chip high" : "chip";
+
+  content.innerHTML = `
+    <!-- Contact & Action Header -->
+    <div style="background:var(--g2);border:1px solid var(--gb);padding:14px 18px;border-radius:16px;margin-bottom:18px">
+      <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:10px">
+        <div>
+          <div style="font-size:13.5px"><b>Email:</b> <a href="mailto:${email}" style="color:var(--acc);text-decoration:none">${email}</a> &nbsp;|&nbsp; <b>Mobile:</b> ${phone}</div>
+          <div class="mute s" style="margin-top:4px">Education: B.Tech Computer Engineering, 2026 Batch • CGPA: 9.1 / 10.0</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn sm" id="crm-btn-schedule">Schedule Interview</button>
+          <button class="btn sm o" id="crm-btn-shortlist">${app.stage >= 1 ? "Shortlisted ✓" : "Shortlist Candidate"}</button>
+          <button class="btn sm o" id="crm-btn-download">Download PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extracted Skills Matrix -->
+    <h3 style="margin-bottom:8px">Verified Technical Skills (${skills.length})</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px">
+      ${skills.map(s => `<span class="tag y">${s}</span>`).join("")}
+    </div>
+
+    <!-- Complete Structured Resume Experience -->
+    <div style="background:var(--g2);border:1px solid var(--gb);padding:16px;border-radius:14px;margin-bottom:16px">
+      <h3 style="margin-bottom:8px;font-size:15px">Projects & Experience</h3>
+      <div style="margin-bottom:12px">
+        <b>Machine Learning & Analytics Intern</b> <span class="mute s">— Tech Innovation Lab</span>
+        <ul style="margin:4px 0 0 18px;font-size:13px;line-height:1.5" class="mute">
+          <li>Architected deep neural models for computer vision and text processing using PyTorch and OpenCV.</li>
+          <li>Optimized inference pipelines reducing query latency by 35% on high-load workloads.</li>
+          <li>Containerized backend services with Docker and created automated CI/CD workflows.</li>
+        </ul>
+      </div>
+      <div>
+        <b>Campus Placement & Operations Portal</b> <span class="mute s">— Engineering Capstone</span>
+        <ul style="margin:4px 0 0 18px;font-size:13px;line-height:1.5" class="mute">
+          <li>Developed full-stack web application serving 1,500+ student applications with real-time tracking.</li>
+          <li>Designed normalized PostgreSQL database schema and RESTful API endpoints.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Academic Credentials -->
+    <div style="background:var(--g2);border:1px solid var(--gb);padding:16px;border-radius:14px;margin-bottom:16px">
+      <h3 style="margin-bottom:6px;font-size:15px">Academic Credentials & Coursework</h3>
+      <p class="mute s" style="margin:0;line-height:1.5">
+        <b>Bachelor of Technology</b> in Computer Engineering (2022 - 2026)<br>
+        Relevant Coursework: Data Structures & Algorithms, Database Management Systems, Machine Learning, Operating Systems, Cloud Computing.
+      </p>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end">
+      <button class="btn sm o" id="crm-btn-close">Close Resume</button>
+    </div>
+  `;
+
+  modal.classList.add("on");
+
+  $("#crm-btn-close").onclick = () => modal.classList.remove("on");
+  $("#btn-close-crm").onclick = () => modal.classList.remove("on");
+
+  $("#crm-btn-schedule").onclick = () => {
+    modal.classList.remove("on");
+    openScheduleModal(app.id);
+  };
+
+  $("#crm-btn-shortlist").onclick = () => {
+    if (app.stage === 0) {
+      app.stage = 1;
+      app.status = "Shortlisted";
+      if (!app.dates) app.dates = ["","","","",""];
+      app.dates[1] = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(new Date());
+      app.nextStep = "Shortlisted by employer. Technical rounds will follow.";
+      setStore(STORAGE_KEYS.APPLICATIONS, apps);
+      toast(`${candName} shortlisted!`);
+      renderCompanyView();
+      modal.classList.remove("on");
+    } else {
+      toast("Candidate already shortlisted or in advanced stages.");
+    }
+  };
+
+  $("#crm-btn-download").onclick = () => {
+    toast(`Downloading ${resumeFile}...`);
+  };
+}
+
+// Close candidate resume modal on backdrop click
+$("#candidate-resume-modal")?.addEventListener("click", (e) => {
+  if (e.target.id === "candidate-resume-modal") {
+    $("#candidate-resume-modal").classList.remove("on");
+  }
+});
+
+function openScheduleModal(appId){
+  const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  const app = apps.find(a => a.id === appId);
+  if (!app) return;
+
+  $("#sched-app-id").value = app.id;
+  $("#sched-cand-name").value = app.studentName || "Candidate";
+  $("#sched-role").value = `${app.opportunityTitle} at ${app.companyName}`;
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 2);
+  $("#sched-date").value = tomorrow.toISOString().split("T")[0];
+
+  const candEmail = app.studentEmail || `${(app.studentName || "candidate").toLowerCase().replace(/\s+/g, '.')}@college.edu`;
+  const candPhone = app.studentPhone || "+91 98765 43210";
+  if ($("#sched-email")) $("#sched-email").value = candEmail;
+  if ($("#sched-phone")) $("#sched-phone").value = candPhone;
+
+  $("#schedule-modal").classList.add("on");
+}
+
+$("#btn-close-schedule")?.addEventListener("click", () => $("#schedule-modal").classList.remove("on"));
+$("#btn-cancel-sched")?.addEventListener("click", () => $("#schedule-modal").classList.remove("on"));
+
+$("#btn-confirm-sched")?.addEventListener("click", () => {
+  const appId = $("#sched-app-id")?.value;
+  const dateVal = $("#sched-date")?.value;
+  const timeVal = $("#sched-time")?.value || "11:00";
+  const meetVal = $("#sched-meet")?.value || "https://meet.google.com/campus-interview";
+  const emailVal = $("#sched-email")?.value || "candidate@college.edu";
+  const phoneVal = $("#sched-phone")?.value || "+91 98765 43210";
+  const sendEmail = $("#sched-email-check")?.checked;
+  const sendSMS = $("#sched-sms-check")?.checked;
+
+  const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+  const app = apps.find(a => a.id === appId);
+  if (!app) return;
+
+  const dateObj = new Date(dateVal || Date.now());
+  const dateFormatted = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(dateObj);
+
+  app.stage = 3;
+  app.status = "Interview Scheduled";
+  if (!app.dates) app.dates = ["","","","",""];
+  app.dates[3] = `${dateFormatted}, ${timeVal}`;
+  app.meetLink = meetVal;
+  app.nextStep = `Technical interview scheduled on ${dateFormatted} at ${timeVal}. Video link: ${meetVal}. Confirmation sent via Email & SMS.`;
+  setStore(STORAGE_KEYS.APPLICATIONS, apps);
+
+  const interviews = getStore('platform_interviews', []);
+  interviews.unshift({
+    id: 'int_' + Date.now(),
+    appId: app.id,
+    studentName: app.studentName,
+    companyName: app.companyName,
+    role: app.opportunityTitle,
+    date: dateFormatted,
+    time: timeVal,
+    meetLink: meetVal,
+    phone: phoneVal,
+    email: emailVal
+  });
+  setStore('platform_interviews', interviews);
+
+  if (sendEmail) {
+    const emailLogs = getStore('platform_email_logs', []);
+    emailLogs.unshift({
+      id: 'email_' + Date.now(),
+      appId: app.id,
+      candidate: app.studentName,
+      recipient: emailVal,
+      subject: `Official Invitation: Interview for ${app.opportunityTitle} at ${app.companyName}`,
+      body: `Dear ${app.studentName},\n\nWe are pleased to invite you for your technical interview on ${dateFormatted} at ${timeVal}.\nMeeting Link: ${meetVal}\n\nPlease join 5 minutes early to test your audio & video.\n\nBest regards,\nRecruitment Team, ${app.companyName}`,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + " Today"
+    });
+    setStore('platform_email_logs', emailLogs);
+  }
+
+  if (sendSMS) {
+    const smsMessage = `Hi ${app.studentName}, your interview for ${app.opportunityTitle} at ${app.companyName} is scheduled on ${dateFormatted} at ${timeVal}. Link: ${meetVal}`;
+    const smsLogs = getStore('platform_sms_logs', []);
+    smsLogs.unshift({
+      id: 'sms_' + Date.now(),
+      appId: app.id,
+      candidate: app.studentName,
+      phone: phoneVal,
+      message: smsMessage,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + " Today"
+    });
+    setStore('platform_sms_logs', smsLogs);
+  }
+
+  toast(`Interview scheduled! Dispatched Email to ${emailVal} & SMS to ${phoneVal}`);
+  $("#schedule-modal").classList.remove("on");
+  renderCompanyView();
+});
+
+// ---------------- Campus Career Bot ----------------
+function initCareerBot(){
+  const botFab = $("#bot-fab");
+  const botWindow = $("#bot-window");
+  const btnClose = $("#btn-close-bot");
+  const btnSend = $("#btn-bot-send");
+  const inputEl = $("#bot-input");
+  const bodyEl = $("#bot-body");
+
+  if (!botFab || !botWindow) return;
+
+  botFab.onclick = () => {
+    botWindow.classList.toggle("on");
+  };
+  if (btnClose) btnClose.onclick = () => botWindow.classList.remove("on");
+
+  const appendMsg = (text, type = "ai") => {
+    const div = document.createElement("div");
+    div.className = `bot-msg ${type}`;
+    div.innerHTML = text;
+    bodyEl.appendChild(div);
+    bodyEl.scrollTop = bodyEl.scrollHeight;
+  };
+
+  const handleUserQuery = (query) => {
+    if (!query) return;
+    appendMsg(query, "user");
+    inputEl.value = "";
+
+    const q = query.toLowerCase();
+    const skills = getStudentSkills();
+    const opps = getOpportunities();
+
+    setTimeout(() => {
+      if (q.includes("match") || q.includes("job") || q.includes("role")) {
+        if (!opps.length) {
+          appendMsg("There are currently no active job postings. Verified employers will post opportunities soon, or you can test by clicking 'Load demo data' in the Placement Cell!");
+        } else {
+          const matched = opps.map(j => ({ role: j.r, company: j.c, score: matchOpp(j) })).sort((a,b) => b.score - a.score);
+          const top = matched[0];
+          appendMsg(`Based on your profile skills (${skills.slice(0, 4).join(", ") || "none yet"}), your top match is <b>${top.role}</b> at <b>${top.company}</b> with a <b>${top.score}% compatibility score</b>! Check the Opportunities tab to apply.`);
+        }
+      } else if (q.includes("ats") || q.includes("resume") || q.includes("score")) {
+        const analysis = getStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+        if (analysis) {
+          appendMsg(`Your current ATS score is <b>${analysis.score}/100</b>. Top recommendation: ${analysis.recommendations[0] || "Include quantifiable metrics for all project deliverables."}`);
+        } else {
+          appendMsg("You haven't uploaded a resume yet! Click 'Upload resume' or 'Try sample' in Opportunities to get a detailed ATS breakdown.");
+        }
+      } else if (q.includes("interview") || q.includes("question") || q.includes("tech")) {
+        appendMsg(`Here are 2 frequent technical interview questions:<br>1. <b>Explain the difference between SQL indexing and full table scans.</b><br>2. <b>How do you handle overfitting in Machine Learning models? (Regularization, Dropout, Cross-validation)</b>.`);
+      } else if (q.includes("aptitude") || q.includes("test") || q.includes("screening")) {
+        appendMsg("Campus screening tests typically feature 60% Quantitative/Logical aptitude and 40% hands-on coding. Head over to the <b>Aptitude & Code</b> tab to take our interactive assessment!");
+      } else {
+        appendMsg("I'm here to help with your college recruitment journey! You can ask me about matching jobs, ATS resume tips, mock interview questions, or coding test strategies.");
+      }
+    }, 400);
+  };
+
+  if (btnSend && inputEl) {
+    btnSend.onclick = () => handleUserQuery(inputEl.value.trim());
+    inputEl.onkeydown = (e) => { if (e.key === "Enter") handleUserQuery(inputEl.value.trim()); };
+  }
+
+  $$("#bot-window .bot-chips button").forEach(btn => {
+    btn.onclick = () => {
+      const p = btn.dataset.botPrompt;
+      if (p) handleUserQuery(p);
+    };
+  });
+}
+
+// ---------------- Placement Cell View ----------------
+function renderAdminView(){
+  const pending = getStore('platform_pending_companies', []);
+  const apvEl = $("#apv");
+  if (apvEl) {
+    apvEl.innerHTML = pending.length ? pending.map((p, i) => `
+      <div class="li">
+        <div class="row">
+          <span class="av" style="background:${hue(p)}">${ini(p)}</span>
+          <div><h3>${p}</h3><span class="mute s">Registered this week</span></div>
+        </div>
+        <div style="display:flex;gap:6px">
+          <button class="btn o sm" data-approve="${i}">Approve</button>
+        </div>
+      </div>
+    `).join("") : `<p class="mute" style="padding:16px 0">All caught up. New registrations appear here.</p>`;
+
+    $$("#apv button[data-approve]").forEach(b => {
+      b.onclick = () => {
+        const idx = +b.dataset.approve;
+        const name = pending[idx];
+        pending.splice(idx, 1);
+        setStore('platform_pending_companies', pending);
+        toast(name + " approved");
+        renderAdminView();
+      };
+    });
+  }
+
+  const placedEl = $("#admin-placed-list");
+  if (placedEl) {
+    const apps = getStore(STORAGE_KEYS.APPLICATIONS, []);
+    placedEl.innerHTML = apps.length ? apps.slice(0, 10).map(c => `
+      <div class="li">
+        <div class="row">
+          <span class="av" style="background:${hue(c.studentName)}">${ini(c.studentName)}</span>
+          <div>
+            <b>${c.studentName}</b><br>
+            <span class="mute s">${c.companyName}, ${c.opportunityTitle || c.r}</span>
+          </div>
+        </div>
+        <span class="chip ${c.stage >= 3 ? "" : "n"}">${c.status || "Shortlisted"}</span>
+      </div>
+    `).join("") : `<p class="mute" style="padding:16px 0">No active applications or offers recorded yet.</p>`;
+  }
+}
+
+// Admin Demo Data Seeder (Optional Button)
+$("#btn-admin-demo").onclick = () => {
+  const SAMPLE_OPPORTUNITIES = [
+   {id:101,r:"ML intern",c:"Nira Labs",t:"Internship",l:"Mumbai",p:"Paid",x:"Rs 15,000 per month",k:["python","tensorflow","statistics"],d:"Work with two engineers on a computer vision model that reads delivery labels."},
+   {id:102,r:"Frontend intern",c:"Mithi Robotics",t:"Internship",l:"Remote",p:"Paid",x:"Rs 12,000 per month",k:["react","javascript","css"],d:"Build the dashboard that operators use to monitor warehouse robots."},
+   {id:103,r:"Junior data engineer",c:"Tidepool Systems",t:"Full-time",l:"Mumbai",p:"Paid",x:"4.2 LPA",k:["sql","python","airflow","spark"],d:"Own small data pipelines that feed reports for logistics clients."},
+   {id:104,r:"Research assistant",c:"Kavach Analytics",t:"Internship",l:"Remote",p:"Unpaid",x:"Certificate and letter",k:["python","vision"],d:"Support a research team studying crop images."},
+   {id:105,r:"Support engineer",c:"Lattice Cloud",t:"Full-time",l:"Mumbai",p:"Paid",x:"3.6 LPA",k:["linux","networking","sql"],d:"Help customers fix cloud issues and write clear guides."}
+  ];
+  const SAMPLE_APPS = [
+    { id: 'da1', studentName: 'Aarav Patil', companyName: 'Nira Labs', opportunityTitle: 'ML intern', stage: 2, status: 'Interview', dates: ['10 Sep','18 Sep','3 Oct','',''] },
+    { id: 'da2', studentName: 'Riya Shah', companyName: 'Nira Labs', opportunityTitle: 'ML intern', stage: 1, status: 'Shortlisted', dates: ['12 Sep','22 Sep','','',''] },
+    { id: 'da3', studentName: 'Dev Joshi', companyName: 'Tidepool Systems', opportunityTitle: 'Junior data engineer', stage: 3, status: 'Offer', dates: ['15 Sep','20 Sep','28 Sep','02 Oct',''] },
+    { id: 'da4', studentName: 'Sana Qureshi', companyName: 'Kavach Analytics', opportunityTitle: 'Research assistant', stage: 0, status: 'Applied', dates: ['28 Sep','','','',''] }
+  ];
+  setStore(STORAGE_KEYS.OPPORTUNITIES, SAMPLE_OPPORTUNITIES);
+  setStore(STORAGE_KEYS.APPLICATIONS, SAMPLE_APPS);
+  setStore('platform_pending_companies', ["Lattice Cloud Solutions", "Orbit Textiles", "Kuber FinTech"]);
+  toast("Demo dataset loaded!");
+  renderAdminView();
+  renderHomeCompanies();
+};
+
+$("#btn-admin-clear").onclick = () => {
+  if (!confirm("Clear all sample data and restore empty portal?")) return;
+  setStore(STORAGE_KEYS.OPPORTUNITIES, []);
+  setStore(STORAGE_KEYS.APPLICATIONS, []);
+  setStore('platform_pending_companies', []);
+  setStore(STORAGE_KEYS.RESUME_ANALYSIS, null);
+  toast("All data cleared. Portal is clean.");
+  renderAdminView();
+  renderHomeCompanies();
+  listJobs();
+};
+
+// ---------------- Auth Logic ----------------
+let isSignUpMode = false;
+let authRole = "student";
+
+$$("#role button").forEach(b => {
+  b.onclick = () => {
+    $$("#role button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    authRole = b.dataset.role || "student";
+    renderAuthForm();
+  };
+});
+
+function renderAuthForm(){
+  const title = $("#auth-form-title");
+  const headTitle = $("#auth-header-title");
+  const headSub = $("#auth-header-sub");
+  const btnSubmit = $("#btn-auth-submit");
+  const btnToggle = $("#btn-auth-toggle");
+  const extra = $("#auth-extra");
+  const err = $("#auth-err");
+  if (err) err.style.display = "none";
+
+  if (isSignUpMode) {
+    if (title) title.textContent = `Create ${authRole === "company" ? "Company" : authRole === "admin" ? "Officer" : "Student"} Account`;
+    if (headTitle) headTitle.textContent = "Join Platform.";
+    if (headSub) headSub.textContent = "Start your college placement journey in seconds.";
+    if (btnSubmit) btnSubmit.textContent = "Create account";
+    if (btnToggle) btnToggle.textContent = "Back to sign in";
+    if (extra) {
+      extra.innerHTML = `
+        <label for="reg-name">${authRole === "company" ? "Company name" : "Your full name"}</label>
+        <input id="reg-name" placeholder="${authRole === "company" ? "e.g. Acme Robotics" : "e.g. Aarav Patil"}" required>
+      `;
+    }
+  } else {
+    if (title) title.textContent = "Sign in";
+    if (headTitle) headTitle.textContent = "Welcome back.";
+    if (headSub) headSub.textContent = "Pick up where you left off, or create an account to start applying.";
+    if (btnSubmit) btnSubmit.textContent = "Sign in";
+    if (btnToggle) btnToggle.textContent = "Create account";
+    if (extra) extra.innerHTML = "";
+  }
+}
+
+$("#btn-auth-toggle").onclick = () => {
+  isSignUpMode = !isSignUpMode;
+  renderAuthForm();
+};
+
+$("#btn-auth-submit").onclick = () => {
+  const em = ($("#em")?.value || "").trim().toLowerCase();
+  const pw = $("#pw")?.value || "";
+  const errBox = $("#auth-err");
+
+  const showErr = (msg) => {
+    if (errBox) { errBox.textContent = msg; errBox.style.display = "block"; }
+    toast(msg);
+  };
+
+  if (!em || !pw) {
+    showErr("Please enter both email and password.");
+    return;
+  }
+
+  const users = getStore(STORAGE_KEYS.USERS, []);
+
+  if (isSignUpMode) {
+    const name = ($("#reg-name")?.value || "").trim();
+    if (!name) { showErr("Please enter your name."); return; }
+    if (pw.length < 6) { showErr("Password must be at least 6 characters."); return; }
+    if (users.some(u => u.email.toLowerCase() === em)) {
+      showErr("An account with this email already exists.");
+      return;
+    }
+
+    const newUser = {
+      id: 'u_' + Date.now(),
+      name,
+      email: em,
+      password: pw,
+      role: authRole,
+      skills: authRole === "student" ? [] : undefined,
+      status: authRole === "company" ? "pending" : "approved"
+    };
+    users.push(newUser);
+    setStore(STORAGE_KEYS.USERS, users);
+    setCurrentUser(newUser);
+    toast(`Account created. Welcome ${name}!`);
+    go(authRole === "student" ? "jobs" : authRole === "company" ? "company" : "admin");
+  } else {
+    const found = users.find(u => u.email.toLowerCase() === em);
+    if (!found) {
+      showErr("No account found with this email. Click Create account.");
+      return;
+    }
+    if (found.password !== pw) {
+      showErr("Incorrect password. Please try again.");
+      return;
+    }
+    setCurrentUser(found);
+    toast(`Signed in as ${found.name}`);
+    go(found.role === "student" ? "jobs" : found.role === "company" ? "company" : "admin");
+  }
+};
+
+// ---------------- Cross-Tab Real-Time Sync (storage event) ----------------
+window.addEventListener('storage', (e) => {
+  if (
+    !e.key ||
+    e.key === STORAGE_KEYS.APPLICATIONS ||
+    e.key === STORAGE_KEYS.OPPORTUNITIES ||
+    e.key === STORAGE_KEYS.USERS ||
+    e.key === STORAGE_KEYS.RESUME_ANALYSIS ||
+    e.key === 'platform_pending_companies' ||
+    e.key === 'platform_interviews' ||
+    e.key === 'platform_email_logs' ||
+    e.key === 'platform_sms_logs'
+  ) {
+    if (currentView === "home") renderHomeCompanies();
+    if (currentView === "jobs") listJobs();
+    if (currentView === "apps") renderTrackerView();
+    if (currentView === "aptitude") renderAptitudeView();
+    if (currentView === "company") renderCompanyView();
+    if (currentView === "comp-interviews") renderCompInterviewsView();
+    if (currentView === "admin") renderAdminView();
+  }
+});
+
+// ---------------- Initial Setup ----------------
+updateNavState();
+renderHomeCompanies();
+listJobs();
+initCareerBot();
+</script>
+</body>
+</html>

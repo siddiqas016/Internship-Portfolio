@@ -1,0 +1,6 @@
+{
+  "name": "Platform: internships and placements",
+  "description": "Advanced college internship and placement portal with role-based dashboards, glowing application tracker, and skill matching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

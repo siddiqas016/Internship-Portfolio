@@ -1,0 +1,100 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        getUserData().role == 'admin' ||
+        request.auth.token.email == 'siddiqa.s016@gmail.com'
+      );
+    }
+
+    function isStudent() {
+      return isSignedIn() && getUserData().role == 'student';
+    }
+
+    function isCompany() {
+      return isSignedIn() && getUserData().role == 'company';
+    }
+
+    function isApprovedCompany() {
+      return isCompany() &&
+        get(/databases/$(database)/documents/companies/$(request.auth.uid)).data.status == 'approved';
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 1. Users collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isOwner(userId) &&
+        request.resource.data.userId == request.auth.uid &&
+        (request.resource.data.role == 'student' || request.resource.data.role == 'company' || isAdmin());
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // 2. Students collection
+    match /students/{userId} {
+      allow read: if isSignedIn();
+      allow create, update: if isOwner(userId) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // 3. Companies collection
+    match /companies/{userId} {
+      allow read: if isSignedIn();
+      allow create: if (isOwner(userId) && request.resource.data.status == 'pending') || isAdmin();
+      allow update: if isAdmin() || (
+        isOwner(userId) &&
+        request.resource.data.status == resource.data.status
+      );
+      allow delete: if isAdmin();
+    }
+
+    // 4. Opportunities collection
+    match /opportunities/{oppId} {
+      allow read: if isSignedIn();
+      allow create: if (isApprovedCompany() && request.resource.data.companyId == request.auth.uid) || isAdmin();
+      allow update, delete: if (isApprovedCompany() && resource.data.companyId == request.auth.uid) || isAdmin();
+    }
+
+    // 5. Applications collection
+    match /applications/{appId} {
+      allow read: if isAdmin() || (
+        isSignedIn() && (
+          resource.data.studentId == request.auth.uid ||
+          resource.data.companyId == request.auth.uid
+        )
+      );
+      allow create: if (isStudent() && request.resource.data.studentId == request.auth.uid) || isAdmin();
+      allow update: if isAdmin() || (
+        // Company can update candidate stage/status
+        isApprovedCompany() && resource.data.companyId == request.auth.uid
+      ) || (
+        // Student can update (e.g. withdraw)
+        isOwner(resource.data.studentId)
+      );
+      allow delete: if isAdmin() || (
+        isSignedIn() && resource.data.studentId == request.auth.uid
+      );
+    }
+  }
+}
